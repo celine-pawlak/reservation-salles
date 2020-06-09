@@ -15,41 +15,36 @@ $page_selected = "incription";
         <header>
 
           <?php include("header.php");
-
+            
             $errors = [];
 
             if (isset($_POST['submit'])) {
                   $login = $_POST['login'];
                   $password = $_POST['password'];
                   $mdpcheck = $_POST['mdp-check'];
+                  $password_modified = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
 
                   if ($login && $password && $mdpcheck) {
-
-                      $options = ['cost' => 10,];
-                      password_hash($password, PASSWORD_BCRYPT, $options);
-
-                  if ($password == $mdpcheck) {
+                      
+                  if($password == $mdpcheck) {
 
                   $connexion = mysqli_connect('localhost', 'root', '','reservationsalles');
-                  $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login','$password')";
+                  $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login',' $password_modified')";
+                      
                   $query = mysqli_query($connexion, $requete);
-
+                 
                   header('location:connexion.php');
 
                   } else $errors[] ="Les mots de passe doivent être identiques";
                } else $errors[]="Veuillez saisir tous les champs";
             }
 
-
-
-
-
             ?>
 
         </header>
         <main>
             <div class="content">
-             <?= renderErrors($errors)?>// reste du contenu
+             <?= renderErrors($errors)?>
             </div>
 
             <form class="form-inscription" action="inscription.php" method="post">
