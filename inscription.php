@@ -14,7 +14,6 @@ $page_selected = "incription";
     <body>
         <header>
 
-
           <?php include("header.php");
 
             $errors = [];
@@ -25,6 +24,9 @@ $page_selected = "incription";
                   $mdpcheck = $_POST['mdp-check'];
 
                   if ($login && $password && $mdpcheck) {
+                      
+                      $options = ['cost' => 10,];
+                      password_hash($password, PASSWORD_BCRYPT, $options);
 
                   if ($password == $mdpcheck) {
 
@@ -37,7 +39,13 @@ $page_selected = "incription";
                   } else $errors[] ="Les mots de passe doivent être identiques";
                } else $errors[]="Veuillez saisir tous les champs";
             }
-        ?>
+            
+            
+
+                
+            
+            ?>
+            
         </header>
         <main>
             <div class="content">
