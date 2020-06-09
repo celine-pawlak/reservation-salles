@@ -13,9 +13,48 @@ $page_selected = "incription";
     </head>
     <body>
         <header>
-          <?php include("header.php")?>
+          <?php include("header.php");
+
+            if (isset($_POST['submit'])) {
+                  $login = $_POST['login'];
+                  $password = $_POST['password'];
+                  $mdpcheck = $_POST['mdp-check'];
+                  
+                  if ($login && $password && $mdpcheck) {
+                      
+                  if ($password == $mdpcheck) {
+
+                  $connexion = mysqli_connect('localhost', 'root', '','reservationsalles');
+                  $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login','$password')";
+                  $query = mysqli_query($connexion, $requete);
+
+                  header('location:connexion.php');
+        
+                  } else $errors[] ="Les mots de passe doivent être identiques";
+               } else $errors[]="Veuillez saisir tous les champs";
+            }
+        ?>
         </header>
         <main>
+            <form class="form-inscription" action="inscription.php" method="post">
+                <h1> INSCRIPTION </h1><br/>
+                
+                <label for="login">Identifiant</label>
+                <input type="texte" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
+
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrer un mot de passe"> <br />
+
+                <label for="mdp-check">Confirmation mot de passe</label>
+                <input type="password" id="mdp-check" name="mdp-check" placeholder="Confirmer le mot de passe"> <br/>
+                
+                <div class="button" >
+                    <input type="submit" value="VALIDER" name="submit">
+                </div>
+
+                <br><p id="connecte">Vous avez déjà un compte ? <a href="connexion.php">Connectez-vous</a></p><br>
+                
+             </form>
         </main>
         <footer>
           <?php include("footer.php")?>
