@@ -13,9 +13,14 @@ $page_selected = "conexion";
     </head>
     <body>
         <header>
-          <?php include("header.php")?>
+          <?php include("header.php");
+            $errors = [];
+            ?>
         </header>
         <main>
+            <div class="content">
+                <?= renderErrors($errors) ?>// reste du contenu
+            </div>
         </main>
         <footer>
           <?php include("footer.php")?>
