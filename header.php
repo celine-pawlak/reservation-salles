@@ -9,7 +9,7 @@ if ($page_selected == "profil"  AND !$_SESSION['id'])
 {
   header('location: connexion.php');
 }
-if (in_array($page_selected, ['connexion','inscription']) AND isset($_SESSION['id'])
+if (in_array($page_selected, ['connexion','inscription']) AND isset($_SESSION['id']))
 {
   header('location: index.php');
 }

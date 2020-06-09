@@ -1,6 +1,10 @@
+<?php
+$page_selected = "conexion";
+ ?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-    <head>     
+    <head>
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
