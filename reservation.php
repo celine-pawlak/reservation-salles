@@ -16,11 +16,11 @@ $page_selected = "reservation";
           <?php include("header.php");
             $errors = [];
             ?>
-            
+
         </header>
         <main>
             <div class="content">
-                <?= renderErrors($errors) ?>// reste du contenu
+                <?= renderErrors($errors) ?>
             </div>
         </main>
         <footer>
