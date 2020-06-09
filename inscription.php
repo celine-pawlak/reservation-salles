@@ -18,7 +18,6 @@ $page_selected = "incription";
             $errors = [];
             
             ?>
-            
         </header>
         <main>
             <div class="content">
