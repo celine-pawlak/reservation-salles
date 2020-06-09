@@ -13,12 +13,14 @@
     <input type="text" name="description" value="" required placeholder="Description">
   </div>
   <div class="form_element">
-    <label for="date_debut">Date de début</label>
-    <input type="datetime" name="date_debut" value="" required>
-  </div>
-  <div class="form_element">
-    <label for="date_fin">Date de fin</label>
-    <input type="datetime" name="date_fin" value="" required>
-  </div>
+    <div class="">
+      <label for="date_debut">Le</label>
+      <input type="date" name="date_debut" value="" required>
+      <label for="heure_debut">de</label>
+      <input type="time" name="heure_debut" value="" required>
+      <label for="heure_debut">à</label>
+      <input type="time" name="" value="<?php $heure_fin ?>" disabled>
+    </div>
+
   <button type="submit" name="reservation_button">Réserver</button>
 </form>

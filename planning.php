@@ -15,13 +15,14 @@ $page_selected = "planning";
         <header>
           <?php include("header.php");
             $errors = [];
-            
+
             ?>
 
         </header>
         <main>
             <div class="content">
-                <?= renderErrors($errors) ?>// reste du contenu
+                <?= renderErrors($errors) ?>
+                <?php include 'reservation-form.php'; ?>
             </div>
         </main>
         <footer>
