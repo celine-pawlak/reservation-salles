@@ -13,8 +13,12 @@ $page_selected = "incription";
     </head>
     <body>
         <header>
-          <?php include("header.php");
+            
 
+          <?php include("header.php");
+            
+            $errors = [];
+            
             if (isset($_POST['submit'])) {
                   $login = $_POST['login'];
                   $password = $_POST['password'];
@@ -36,6 +40,10 @@ $page_selected = "incription";
         ?>
         </header>
         <main>
+            <div class="content">
+             <?= renderErrors($errors)?>// reste du contenu
+            </div>
+
             <form class="form-inscription" action="inscription.php" method="post">
                 <h1> INSCRIPTION </h1><br/>
                 
@@ -52,7 +60,7 @@ $page_selected = "incription";
                     <input type="submit" value="VALIDER" name="submit">
                 </div>
 
-                <br><p id="connecte">Vous avez déjà un compte ? <a href="connexion.php">Connectez-vous</a></p><br>
+                <br><p>Vous avez déjà un compte ?<a href="connexion.php">Connectez-vous</a></p><br>
                 
              </form>
         </main>
