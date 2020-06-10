@@ -41,9 +41,7 @@ $page_selected = "conexion";
                     
                         }else{echo "Veuillez remplir tous les champs";} 
                     }
-                    
 
-            
             ?>
         </header>
         <main>
