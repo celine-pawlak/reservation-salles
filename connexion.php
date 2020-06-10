@@ -34,8 +34,9 @@ $page_selected = "conexion";
                     
                     var_dump($password,$user[2] );
                     if(password_verify($password,$user[2])){
-                        echo "yes ça fonctionne";
-                                header('location:reservation-form.php');
+                        
+                        $_SESSION['login']=$_POST['login'];
+                        header('location:planning.php');
                         
                             }else{echo "Login ou mot de passe incorrect";} 
                     

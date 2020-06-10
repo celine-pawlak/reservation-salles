@@ -12,23 +12,31 @@
           <?php include("header.php");
             $errors = [];
             
+            $date_min=date("Y-m-d");
+            $date_max=date("Y-m-d", strtotime("+1 year"));
+            $heure_min=date("h:i:s");
+            $heure_max=date("h:i:s", strtotime('now +1 Hour'));
+            
+            
+            
             if(isset($_SESSION['login'])){
                 
                 if(isset($_POST['submit'])){
                 $titre=$_POST['title'];
                 $description=$_POST['description'];
-                $debut=$_POST['date-debut'];
-                $fin=$_POST['date-fin'];
+                $debut=$_POST['date_debut']." ".$_POST['heure_debut'];
+                $fin=$_POST['date_fin']." ".$_POST['heure_fin'];
                     
                     if($titre && $description && $debut && $fin){
+                        
+                       
                         $connexion=mysqli_connect('localhost','root','','reservationsalles');
                         $requete="INSERT INTO reservations (titre,description,debut,fin) VALUES ('$titre','$description','$debut','$fin')";
                         $execution=mysqli_query($connexion,$requete);
                         
                         header('location:planning.php');
                     }else echo "Veuillez remplir tous les champs";
-                
-                
+
                 }
             }
             
@@ -45,11 +53,18 @@
                     <label for="description">Description</label><br>
                     <textarea id="description" name="description"></textarea><br>
                     
-                    <label for="date-debut">Date début</label><br>
-                    <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"><br>
+                    <label for="date-debut">Date début</label>
+                    <input type="date" id="date-debut" name="date_debut" min="<?php echo $date_min; ?>" max="<?php echo $date_max; ?>">
                     
-                    <label for="date-fin">Date de fin</label><br>
-                    <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T20:30"><br>
+                    <label for="heure-debut">Heure de début</label>
+                    <input type="time" id="heure" name="heure_debut"
+       min="<?php $heure_min; ?>" max="00:00"><br>
+                    
+                    <label for="date-fin">Date de fin</label>
+                    <input type="date" id="date-fin" name="date_fin" min="<?php echo $date_min; ?>" max="<?php echo $date_max; ?>"><br>
+                    
+                    
+                    
                     
                     <input type="submit" name="submit" value="VALIDER">
                     

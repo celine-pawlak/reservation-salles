@@ -5,11 +5,11 @@ $db = mysqli_connect("localhost", "root", "", "reservationsalles");
 
 /*REDIRECTIONS SELON SESSION*/
 
-if ($page_selected == "profil"  AND !$_SESSION['id'])
+if ($page_selected == "profil"  AND !$_SESSION['login'])
 {
   header('location: connexion.php');
 }
-if (in_array($page_selected, ['connexion','inscription']) AND isset($_SESSION['id']))
+if (in_array($page_selected, ['connexion','inscription']) AND isset($_SESSION['login']))
 {
   header('location: index.php');
 }
@@ -57,7 +57,7 @@ function renderErrors($errors)
      <a href="planning.php"><h1>Planning</h1></a>
    </div>
    <div class="header_3">
-     <?php if (isset($_SESSION['id']))
+     <?php if (isset($_SESSION['login']))
      { ?>
        <ul>
          <li class="liste">
