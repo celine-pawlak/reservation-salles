@@ -51,7 +51,7 @@ $page_selected = "incription";
                 <h1> INSCRIPTION </h1><br/>
 
                 <label for="login">Identifiant</label>
-                <input type="texte" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
+                <input type="text" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
 
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" placeholder="Entrer un mot de passe"> <br />
