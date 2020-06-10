@@ -3,7 +3,7 @@
 
  ?>
 
-<form class="" action="reservation-form.php" method="post">
+<form class="" action="planning.php" method="post">
   <div class="form_element">
     <label for="titre">Titre</label>
     <input type="text" name="titre" value="" required placeholder="Titre">
@@ -17,9 +17,9 @@
       <label for="date_debut">Le</label>
       <input type="date" name="date_debut" value="" required>
       <label for="heure_debut">de</label>
-      <input type="time" name="heure_debut" value="" required>
-      <label for="heure_debut">à</label>
-      <input type="time" name="" value="<?php $heure_fin ?>" disabled>
+      <input type="time" name="heure_debut" value="" step="3600" required>
+      <label for="heure_fin">à</label>
+      <input type="time" name="heure_fin" value="" step="3600" required>
     </div>
 
   <button type="submit" name="reservation_button">Réserver</button>
