@@ -16,12 +16,35 @@ $page_selected = "index";
           <?php include("header.php");
             $errors = [];
             
+            if (isset($_SESSION['login'])){
+            echo'
+                <div>
+                    <h1>Bienvenue ' .$_SESSION['login'].'</h1>
+                </div>
+                <div>
+                    
+                </div>
+                
+                ';
+        }else{
+            echo"
+                <div>
+                    <h1>
+                        Inscrivez-vous pour accéder à l'espace réservation. 
+                    </h1>
+                </div>
+                <div class='index-button'>
+                    <a id='connex-button' href='connexion.php'>Se connecter</a>
+                    <a id='inscri-button' href='inscription.php'>S'inscrire</a>
+                </div>
+                ";
+        }
             ?>
 
         </header>
         <main>
             <div class="content">
-                <?= renderErrors($errors) ?>// reste du contenu
+                <?= renderErrors($errors) ?>
             </div>
         </main>
         <footer>
