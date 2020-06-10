@@ -22,21 +22,21 @@ $page_selected = "incription";
                   $login = $_POST['login'];
                   $password = $_POST['password'];
                   $mdpcheck = $_POST['mdp-check'];
-                  $password_modified = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
+                  $password_modified =  password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
 
                   if ($login && $password && $mdpcheck) {
                       
-                  if($password == $mdpcheck) {
+                      if($password == $mdpcheck) {
 
-                  $connexion = mysqli_connect('localhost', 'root', '','reservationsalles');
-                  $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login',' $password_modified')";
-                      
-                  $query = mysqli_query($connexion, $requete);
-                 
-                  header('location:connexion.php');
+                      $connexion = mysqli_connect('localhost', 'root', '','reservationsalles');
+                      $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login',' $password_modified')";
 
-                  } else $errors[] ="Les mots de passe doivent être identiques";
-               } else $errors[]="Veuillez saisir tous les champs";
+                      $query = mysqli_query($connexion, $requete);
+
+                      header('location:connexion.php');
+
+                      } else $errors[] ="Les mots de passe doivent être identiques";
+                } else $errors[]="Veuillez saisir tous les champs";
             }
 
             ?>
