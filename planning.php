@@ -41,7 +41,7 @@ $page_selected = "planning";
               }
 
               /*DATE*/
-              //conditions//
+
 
               /*HEURE*/
               $heure_pile = preg_match("/^.*[0][0]$/", $heure_debut);
@@ -58,6 +58,8 @@ $page_selected = "planning";
               {
                 $errors[] = "L'heure de début doit être inférieur à l'heure de fin.";
               }
+
+              /* VERIFICATION CRENAUX HORAIRE */
               include 'heure.php';
               $heureonly_debut = heure_recup($heure_debut);
               $heureonly_fin = heure_recup($heure_fin);
@@ -69,22 +71,22 @@ $page_selected = "planning";
               {
                 $errors[] = "L'heure de fin doit être comprise entre 09:00 et 19:00.";
               }
-              $debut = $date_debut . " " . $heure_debut;
-              $fin = $date_debut . " " . $heure_fin;
 
               if(empty($errors))
               {
+                /* CONCATENATION DATE ET HEURE */
                 $debut = $date_debut . " " . $heure_debut;
                 $fin = $date_debut . " " . $heure_fin;
 
-                /*RECUP ID FROM SESSION*/
-                $request_id = "SELECT id from utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
-                $query_id = mysqli_query($db, $request_id);
-                $user_id = mysqli_fetch_array($query_id);
-
-                /*ENVOI DONNEES BDD*/
-                $request = "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
-                $query = mysqli_query($db, $request);
+              //   /* RECUP ID FROM SESSION */
+              //   $request_id = "SELECT id from utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
+              //   $query_id = mysqli_query($db, $request_id);
+              //   $user_id = mysqli_fetch_array($query_id);
+              //
+              //   /* ENVOI DONNEES BDD */
+              //   $request = "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
+              //   $query = mysqli_query($db, $request);
+              //   header('location: planning.php');
               }
             }
             elseif(!empty($_POST))
