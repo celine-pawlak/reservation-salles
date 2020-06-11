@@ -8,8 +8,8 @@ $page_selected = "index";
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-        <link rel="stylesheet" href="fa.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="styles/css/main.css">
+        <link rel="stylesheet" href="styles/css/style.css">
     </head>
     <body>
         <header>
@@ -21,7 +21,7 @@ $page_selected = "index";
         </header>
         <main>
             <div class="content">
-                <?= renderErrors($errors) ?>// reste du contenu
+                <?= renderErrors($errors) ?>
             </div>
         </main>
         <footer>

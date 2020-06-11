@@ -55,34 +55,15 @@ function renderErrors($errors)
             <?php else : ?>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="planning.php">Planning</a></li>
-                <li><a href="profil.php">Modifier mes identifiants</a></li>
-                <li><a href="delete_session.php">Deconnexion</a></li>
+                <li class="liste">
+                    <h1>Mon compte</h1>
+                    <ul class="sous-liste">
+                        <li><a href="profil.php">Modifier mes identifiants</a></li>
+                        <li><a href="delete_session.php">Déconnexion</a></li>
+                    </ul>
+                </li>
+
             <?php endif; ?>
         </ul>
     </div>
 </nav>
-<!-- <nav>
-   <div class="header_1">
-     <a href="index.php"><h1>Accueil</h1></a>
-   </div>
-   <div class="header_2">
-     <a href="planning.php"><h1>Planning</h1></a>
-   </div>
-   <div class="header_3">
-     <?php /*if (isset($_SESSION['user'] )) { */ ?>
-       <ul>
-         <li class="liste">
-           <h1>Mon compte</h1>
-           <ul class="sous-liste">
-             <li><a href="profil.php">Modifier mes identifiants</a></li>
-             <li><a href="delete_session.php">Déconnexion</a></li>
-           </ul>
-         </li>
-       </ul>
-     <?php /*} else { */ ?>
-       <a href="connexion.php">Connexion</a>
-       <p>/</p>
-       <a href="inscription.php">Inscription</a>
-     <?php /*} */ ?>
-   </div>
- </nav>-->

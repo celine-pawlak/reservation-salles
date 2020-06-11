@@ -1,6 +1,6 @@
 <?php
 $page_selected = "incription";
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -8,8 +8,8 @@ $page_selected = "incription";
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-        <link rel="stylesheet" href="fa.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="styles/css/main.css">
+        <link rel="stylesheet" href="styles/css/style.css">
     </head>
     <body>
         <header>
@@ -19,24 +19,25 @@ $page_selected = "incription";
             $errors = [];
 
             if (isset($_POST['submit'])) {
-                  $login = $_POST['login'];
-                  $password = $_POST['password'];
-                  $mdpcheck = $_POST['mdp-check'];
-                  $password_modified =  password_hash($password,PASSWORD_BCRYPT, array('cost' => 10));
+                $login = $_POST['login'];
+                $password = $_POST['password'];
+                $mdpcheck = $_POST['mdp-check'];
+                $password_modified =  password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
 
-                  if ($login && $password && $mdpcheck) {
-                      
-                      if($password == $mdpcheck) {
+                if ($login && $password && $mdpcheck) {
+                    if ($password == $mdpcheck) {
+                        $connexion = mysqli_connect('localhost', 'root', '', 'reservationsalles');
+                        $requete = "INSERT INTO `reservationsalles`.`utilisateurs` (login,password) VALUES ('$login','$password_modified')";
 
-                      $connexion = mysqli_connect('localhost', 'root', '','reservationsalles');
-                      $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login','$password_modified')";
+                        $query = mysqli_query($connexion, $requete);
 
-                      $query = mysqli_query($connexion, $requete);
-
-                      header('location:connexion.php');
-
-                      } else $errors[] ="Les mots de passe doivent être identiques";
-                } else $errors[]="Veuillez saisir tous les champs";
+                        header('location:connexion.php');
+                    } else {
+                        $errors[] = "Les mots de passe doivent être identiques";
+                    }
+                } else {
+                    $errors[] = "Veuillez saisir tous les champs";
+                }
             }
 
             ?>
