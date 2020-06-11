@@ -1,31 +1,31 @@
 <?php
 $page_selected = "profil";
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-    <head>
-        <title>Profil - Réservation</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-        <link rel="stylesheet" href="styles/css/fa.css">
-        <link rel="stylesheet" type="text/css" href="styles/css/style.css">
-    </head>
-    <body>
-        <header>
-          <?php
+<head>
+    <title>Profil - Réservation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+    <link rel="stylesheet" href="styles/css/fa.css">
+    <link rel="stylesheet" type="text/css" href="styles/css/style.css">
+</head>
+<body>
+<header>
+    <?php
           include 'header.php';
           $errors = [];
 
           /* INFO UTILISATEUR */
 
-          $request = "SELECT * FROM utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
+          $request = "SELECT * FROM utilisateurs WHERE login = '$_SESSION['user'] ';";
           $query = mysqli_query($db, $request);
           $user_info = mysqli_fetch_array($query);
 
           /*LOGIN*/
 
-          if (!empty($_POST['new_login']) AND !empty($_POST['new_login_conf']) AND isset($_POST['password_button']))
+          if (!empty($_POST['new_login']) and !empty($_POST['new_login_conf']) and isset($_POST['password_button']))
           {
             $new_login = $_POST['new_login'];
             $new_login_conf = $_POST['new_login_conf'];
@@ -50,14 +50,14 @@ $page_selected = "profil";
               echo "Le login a bien été modifié !";
             }
           }
-          elseif (isset($_POST['login_button']) AND (empty($_POST['new_login']) OR empty($_POST['new_login_conf'])))
+          elseif (isset($_POST['login_button']) and (empty($_POST['new_login']) or empty($_POST['new_login_conf'])))
           {
             $errors[] = "Les deux champs de login doivent être remplis";
           }
 
           /*MOT DE PASSE*/
 
-          if (!empty($_POST['old_pass']) AND !empty($_POST['new_pass']) AND !empty($_POST['new_pass_conf']) AND isset($_POST['password_button']))
+          if (!empty($_POST['old_pass']) and !empty($_POST['new_pass']) and !empty($_POST['new_pass_conf']) and isset($_POST['password_button']))
           {
             $old_pass = $_POST['old_pass'];
             $new_pass = $_POST['new_pass'];
@@ -87,48 +87,48 @@ $page_selected = "profil";
               echo "Le mot de passe a bien été modifié !";
             }
           }
-          elseif (isset($_POST['password_button']) AND ( empty($_POST['old_pass']) OR empty($_POST['new_pass']) OR empty($_POST['new_pass_conf']) ) )
+          elseif (isset($_POST['password_button']) and ( empty($_POST['old_pass']) or empty($_POST['new_pass']) or empty($_POST['new_pass_conf']) ) )
           {
             $errors[] = "Tous les champs du mot de passe doivent être remplis.";
           }
 
           ?>
-        </header>
-        <main>
-          <div class="content">
-            <?= renderErrors($errors) ?>
-            <form class="" action="profil.php" method="post">
-              <h2>Modifier pseudo</h2>
-              <div class="form_element">
+</header>
+<main>
+    <div class="content">
+        <?= renderErrors($errors) ?>
+        <form class="" action="profil.php" method="post">
+            <h2>Modifier pseudo</h2>
+            <div class="form_element">
                 <label for="new_login">Nouveau pseudo</label>
                 <input type="text" name="new_login" value="" required placeholder="Nouveau pseudo">
-              </div>
-              <div class="form_element">
+            </div>
+            <div class="form_element">
                 <label for="new_login_conf">Confirmation pseudo</label>
                 <input type="text" name="new_login_conf" value="" required placeholder="Confirmer pseudo">
-              </div>
-              <button type="submit" name="login_button">Modifier</button>
-            </form>
-            <form class="" action="profil.php" method="post">
-              <h2>Modifier mot de passe</h2>
-              <div class="form_element">
+            </div>
+            <button type="submit" name="login_button">Modifier</button>
+        </form>
+        <form class="" action="profil.php" method="post">
+            <h2>Modifier mot de passe</h2>
+            <div class="form_element">
                 <label for="old_pass">Ancien mot de passe</label>
                 <input type="password" name="old_pass" value="" required placeholder="Ancien mdp">
-              </div>
-              <div class="form_element">
+            </div>
+            <div class="form_element">
                 <label for="new_pass">Nouveau mot de passe</label>
                 <input type="password" name="new_pass" value="" required placeholder="Nouveau mdp">
-              </div>
-              <div class="form_element">
+            </div>
+            <div class="form_element">
                 <label for="new_pass_conf">Confirmation nouveau mot de passe</label>
                 <input type="password" name="new_pass_conf" value="" required placeholder="Confirmer nouveau mdp">
-              </div>
-              <button type="submit" name="password_button">Modifier</button>
-            </form>
-          </div>
-        </main>
-        <footer>
-          <?php include("footer.php")?>
-        </footer>
-    </body>
+            </div>
+            <button type="submit" name="password_button">Modifier</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <?php include("footer.php") ?>
+</footer>
+</body>
 </html>
