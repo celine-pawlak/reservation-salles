@@ -77,4 +77,6 @@ fabric.properties
 
 # PHP-CS Fixer
 *php_cs*
-Supprimerait .gitignore
+
+# Insync
+*insyncdl
