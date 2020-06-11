@@ -6,11 +6,11 @@
 <form class="" action="planning.php" method="post">
   <div class="form_element">
     <label for="titre">Titre</label>
-    <input type="text" name="titre" value="" required placeholder="Titre">
+    <input type="text" name="titre" value="" required placeholder="Titre" maxlength="30">
   </div>
   <div class="form_element">
     <label for="description">Description</label>
-    <input type="text" name="description" value="" required placeholder="Description">
+    <input type="text" name="description" value="" required placeholder="Description" maxlength="30">
   </div>
   <div class="form_element">
     <div class="">
@@ -21,6 +21,5 @@
       <label for="heure_fin">à</label>
       <input type="time" name="heure_fin" value="" step="3600" min="09:00:00" max="19:00:00" required>
     </div>
-
   <button type="submit" name="reservation_button">Réserver</button>
 </form>
