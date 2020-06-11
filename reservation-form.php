@@ -45,6 +45,7 @@
              
                                    $connexion=mysqli_connect('localhost','root','','reservationsalles');
 
+
                                 $requete="INSERT INTO reservations (titre,description,debut,fin) VALUES ('$titre','$description','$debut','$fin')";
                                 $execution=mysqli_query($connexion,$requete);
                         
@@ -100,4 +101,5 @@
           <?php include("footer.php")?>
         </footer>
     </body>
+
 </html>
