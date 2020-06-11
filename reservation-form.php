@@ -33,12 +33,12 @@
                         
                         // Condition du lundi au vendredi
                         
-                        if(isset($_POST['date_debut'])==$date){
-                            if($date!=="Sat" && $date!=="Sun"){
+                        if(isset($_POST['date_debut'])==$date || $date!=="Sat" && $date!=="Sun"){
+                            
 
                        // Condition entre 8h et 19h
-                            if(isset($_POST['heure_debut'])==$heure){
-                                if($heure >= "08" && $heure <= "19"){
+                            if(isset($_POST['heure_debut'])==$heure || $heure >= "08" && $heure <= "19"){
+                               
 
                             // Condition 1h max de réservation 
                                     if(isset($_POST['heure_fin'])==$heure_max){
@@ -51,13 +51,12 @@
                                 header('location:planning.php');
                                     
                             }else echo "Vous ne pouvez choisir qu'un créneau d'une heure";
-                                    
-                        }else echo "Réservation possible uniquement entre 08:00 et 19:00";
 
-                        }
+
+                        } else echo "Réservation possible uniquement entre 08:00 et 19:00";
                             
-                            }else echo "Fermé le Samedi et Dimanche";
-                        }
+                            
+                        }else echo "Fermé le Samedi et Dimanche";
                     }else echo "Veuillez remplir tous les champs";
 
                 }
