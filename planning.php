@@ -15,14 +15,15 @@ $page_selected = "planning";
         <header>
           <?php include("header.php");
             $errors = [];
+            date_default_timezone_set('Europe/Paris');
 
             /*RESERVATION FORM*/
 
-            if (!empty($_POST['titre']) AND !empty($_POST['description']) AND !empty($_POST['date_debut']) AND !empty($_POST['heure_debut']))
+            if (!empty($_POST['titre']) AND !empty($_POST['description']) AND !empty($_POST['date']) AND !empty($_POST['heure_debut']))
             {
               $titre = $_POST['titre'];
               $description = $_POST['description'];
-              $date_debut = $_POST['date_debut'];
+              $date = $_POST['date'];
               $heure_debut = $_POST['heure_debut'];
               $heure_fin = $_POST['heure_fin'];
 
@@ -42,6 +43,33 @@ $page_selected = "planning";
 
               /*DATE*/
 
+              // JOURS DE LA SEMAINE
+              $days = strtotime($date);
+              $dayOfWeek = date("l", $days);
+              if ($dayOfWeek == "Saturday" OR $dayOfWeek == "Sunday")
+              {
+                $errors[] = "Les réservations ne sont possibles que du lundi au vendredi.";
+              }
+
+              // EMPECHER POST RESERVATION
+
+              $today_s_date = date('Y-m-d');
+              if ($date <= $today_s_date)
+              {
+                if ($date == $today_s_date)
+                {
+                  $today_s_hour = date('H:i');
+                  if ($heure_debut <= $today_s_hour)
+                  {
+                    $errors[] = "Vous ne pouvez pas réserver un créneaux sur une heure antérieure.";
+                  }
+                }
+                else
+                {
+                  $errors[] = "La réservation ne peux pas se faire sur une date antérieure.";
+                }
+              }
+
 
               /*HEURE*/
               $heure_pile = preg_match("/^.*[0][0]$/", $heure_debut);
@@ -59,8 +87,7 @@ $page_selected = "planning";
                 $errors[] = "L'heure de début doit être inférieur à l'heure de fin.";
               }
 
-              /* VERIFICATION CRENAUX HORAIRE */
-              include 'heure.php';
+              //VERIFICATION CRENAUX HORAIRE
 
               if ($heure_debut < 8 OR $heure_debut > 18)
               {
@@ -73,27 +100,47 @@ $page_selected = "planning";
 
               if(empty($errors))
               {
-                /* CONCATENATION DATE ET HEURE */
-                $debut = $date_debut . " " . $heure_debut;
-                $fin = $date_debut . " " . $heure_fin;
 
-              //   /* RECUP ID FROM SESSION */
-              //   $request_id = "SELECT id from utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
-              //   $query_id = mysqli_query($db, $request_id);
-              //   $user_id = mysqli_fetch_array($query_id);
-              //
-              //   /* ENVOI DONNEES BDD */
-              //   $request = "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
-              //   $query = mysqli_query($db, $request);
-              //   header('location: planning.php');
+                // /* RECUP ID FROM SESSION */
+                // $request_id = "SELECT id from utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
+                // $query_id = mysqli_query($db, $request_id);
+                // $user_id = mysqli_fetch_array($query_id);
+
+
+                //ENVOI PLUSIEURS CRENAUX
+                include 'hour_to_integer.php';
+
+                $h_to_int_debut = heure_recup($heure_debut);
+                $h_to_int_fin = heure_recup($heure_fin);
+
+                if (($h_to_int_fin - $h_to_int_debut) > 1)
+                {
+                  $creneaux = $h_to_int_fin - $h_to_int_debut;
+                  for ($i=0; $i < $creneaux; $i++)
+                  {
+                    $h1 = $h_to_int_debut + $i;
+                    $debut = $date . " " . $h1;
+                    $h2 = $h_to_int_debut + $i +1;
+                    $fin = $date . " " . $h2;
+                    $request = "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
+                    $query = mysqli_query($db, $request);
+                  }
+                }
+                else
+                {
+                  $debut = $date . " " . $heure_debut;
+                  $fin = $date . " " . $heure_fin;
+                  $request = "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
+                  $query = mysqli_query($db, $request);
+                }
+                  header('location: planning.php');
               }
             }
             elseif(!empty($_POST))
             {
-              $errors[] = "Tous les champs doivent être remplis.";
+                $errors[] = "Tous les champs doivent être remplis.";
             }
-
-            ?>
+          ?>
 
         </header>
         <main>
