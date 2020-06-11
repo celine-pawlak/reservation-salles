@@ -61,13 +61,12 @@ $page_selected = "planning";
 
               /* VERIFICATION CRENAUX HORAIRE */
               include 'heure.php';
-              $heureonly_debut = heure_recup($heure_debut);
-              $heureonly_fin = heure_recup($heure_fin);
-              if ($heureonly_debut < 8 OR $heureonly_debut > 18)
+
+              if ($heure_debut < 8 OR $heure_debut > 18)
               {
                 $errors[] = "L'heure de début doit être comprise entre 08:00 et 18:00.";
               }
-              if ($heureonly_fin < 9 OR $heureonly_fin > 19)
+              if ($heure_fin < 9 OR $heure_fin > 19)
               {
                 $errors[] = "L'heure de fin doit être comprise entre 09:00 et 19:00.";
               }
