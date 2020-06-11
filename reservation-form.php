@@ -15,6 +15,7 @@
             $date_min=date("Y-m-d");
             $date_max=date("Y-m-d", strtotime("+1 year"));
             $heure=date("H");
+            $heure_max=date('H:i', strtotime('1 hour'));
             $date=date("D");
 
             
@@ -28,34 +29,35 @@
                 $fin=$_POST['date_fin']." ".$_POST['heure_fin'];
                 
                     
-                    if($titre && $description && $debut){
-                        
-                        
+                    if($titre && $description && $debut && $fin){
                         
                         // Condition du lundi au vendredi
                         
-                        if($date!="Sat" && $date!="Sun"){
-                            if($date == (isset($_POST['date_debut']))){
+                        if(isset($_POST['date_debut'])==$date){
+                            if($date!=="Sat" && $date!=="Sun"){
 
                        // Condition entre 8h et 19h
                             if(isset($_POST['heure_debut'])==$heure){
-                                if($heure >= "08" && $heure<= "19"){
+                                if($heure >= "08" && $heure <= "19"){
 
-                            // Condition 1h max de réservation
-                            
-                                $connexion=mysqli_connect('localhost','root','','reservationsalles');
+                            // Condition 1h max de réservation 
+                                    if(isset($_POST['heure_fin'])==$heure_max){
+             
+                                   $connexion=mysqli_connect('localhost','root','','reservationsalles');
 
                                 $requete="INSERT INTO reservations (titre,description,debut,fin) VALUES ('$titre','$description','$debut','$fin')";
                                 $execution=mysqli_query($connexion,$requete);
                         
                                 header('location:planning.php');
                                     
-                            }else echo "Réservation possible uniquement entre 08:00 et 19:00";
-                                
+                            }else echo "Vous ne pouvez choisir qu'un créneau d'une heure";
+                                    
+                        }else echo "Réservation possible uniquement entre 08:00 et 19:00";
+
                         }
                             
                             }else echo "Fermé le Samedi et Dimanche";
-                    }
+                        }
                     }else echo "Veuillez remplir tous les champs";
 
                 }
@@ -76,7 +78,7 @@
                     <textarea id="description" name="description"></textarea><br>
                     
                     <label for="date-debut">Date début</label>
-                    <input type="date" id="date_debut" name="date_debut" min="<?php $date_min; ?>" max="<?php $date_max; ?>">
+                    <input type="date" id="date_debut" name="date_debut" min="<?php $date_min; ?>" max="<?php $date_max; ?>" >
                     
                     <label for="heure-debut">de</label>
                     <input type="time" id="heure_debut" name="heure_debut" min="<?php $heure_min; ?>"><br>
