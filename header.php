@@ -12,6 +12,9 @@ if ($page_selected == "profil" and !$_SESSION['user']) {
 if (in_array($page_selected, ['connexion', 'inscription']) and isset($_SESSION['user'])) {
     header('location: index.php');
 }
+// if ($page_selected == "planning" and !$_SESSION['user']) {
+//     header('location: connexion.php');
+// }
 
 /*FONCTION ERREURS*/
 

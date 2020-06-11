@@ -24,7 +24,7 @@
   }
   else
   {
-    ?>
+?>
     <button type="submit" name="fill_creneaux">Confirmer</button>
     <?php
   }

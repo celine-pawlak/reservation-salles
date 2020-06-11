@@ -19,7 +19,8 @@ $page_selected = "planning";
 
             /* RECUP ID FROM SESSION */
 
-            $request_id = "SELECT id from utilisateurs WHERE login = '" . $_SESSION['login'] . "';";
+            $login = $_SESSION['user']['login'];
+            $request_id = "SELECT id from utilisateurs WHERE login = '$login';";
             $query_id = mysqli_query($db, $request_id);
             $user_id = mysqli_fetch_array($query_id);
 
@@ -91,7 +92,6 @@ $page_selected = "planning";
                     $query = mysqli_query($db, $request);
                     $is_creneaux_av[$i] = mysqli_fetch_row($query);
                   }
-
                 }
 
               /*TITRE*/
@@ -164,15 +164,18 @@ $page_selected = "planning";
               {
                 $errors[] = "L'heure de fin doit être comprise entre 09:00 et 19:00.";
               }
-
-              if (!empty($is_creneaux_av) AND empty($errors))
-              {
-                include 'form_multiples_creneaux.php';
+              if (isset($is_creneaux_av)) {
+                foreach ($is_creneaux_av as $key => $value) {
+                    var_dump($value);
+                    if ($value == null) {
+                      include 'form_multiples_creneaux.php';
+                      break;
+                    }
+                  //}
+                }
               }
-
-              if(empty($errors))
+              elseif(empty($errors))
               {
-
                 //ENVOI PLUSIEURS CRENAUX
 
                 if (($h_to_int_fin - $h_to_int_debut) > 1)

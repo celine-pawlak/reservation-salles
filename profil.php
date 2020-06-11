@@ -19,7 +19,8 @@ $page_selected = "profil";
 
           /* INFO UTILISATEUR */
 
-          $request = "SELECT * FROM utilisateurs WHERE login = '$_SESSION['user'] ';";
+          $login = $_SESSION['user']['login'];
+          $request = "SELECT * FROM utilisateurs WHERE login = '$login';";
           $query = mysqli_query($db, $request);
           $user_info = mysqli_fetch_array($query);
 
