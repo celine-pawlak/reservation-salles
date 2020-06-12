@@ -45,7 +45,7 @@ function renderErrors($errors)
 }
 
 /*NOM DES JOURS DE LA SEMAINE*/
-include 'get_week_days.php';
+include 'functions/get_week_days.php';
 
 ?>
 
