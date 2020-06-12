@@ -13,6 +13,7 @@ $page_selected = "connexion";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/style.css">
+    <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
     <title>Connexion</title>
 </head>
 <body>

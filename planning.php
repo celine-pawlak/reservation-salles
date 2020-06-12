@@ -10,6 +10,7 @@ $page_selected = "planning";
     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/style.css">
+    <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -185,6 +186,36 @@ $page_selected = "planning";
         <?php include 'reservation-form.php'; ?>
         <p><em> * Les réservations se font du lundi au vendredi et de 8h et 19h.<br>Les créneaux ont une durée fixe
                 d’une heure.</em></p>
+    </div>
+    <div class="week-container-group">
+        <table class="week-calendar">
+            <thead>
+            <tr>
+                <th>Heures</th>
+                <?php
+
+                ?>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>8h00 - 9h00</span>
+                </td>
+                <td></td>
+                <td rowspan="2">
+                    <div class="project">
+                        <div class="project">Projet: Developper Agenda</div>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </main>
 <footer>
