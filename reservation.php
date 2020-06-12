@@ -16,22 +16,20 @@
     $user =  $_SESSION['user']['login'];
 
     
-    if(isset($SESSION['$user'])){
+    if(isset($_SESSION['$user'])){
 
         
         //CONNEXION BDD
-        $db=mysqli_connect('localhost','root','','reservationsalles');
+        $db = mysqli_connect('localhost','root','','reservationsalles');
 
         //CREATION REQUETE
-        $requete="SELECT utilisateurs.login, reservations.titre, reservations.description, reservations.debut, reservations.fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur";
+        $requete = "SELECT utilisateurs.login, reservations.titre, reservations.description, reservations.debut, reservations.fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur";
         
         //EXECUTION REQUETE
-        $query=mysqli_query($db,$requete);
+        $query = mysqli_query($db,$requete);
         
         //RECUPERATION DONNEES
-        $fusion=mysqli_fetch_all($query); 
-    
-        var_dump($fusion);
+        $fusion = mysqli_fetch_all($query); 
         
     }
         ?>
