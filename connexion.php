@@ -33,17 +33,15 @@ $page_selected = "connexion";
             $password_bdd = $userExistCheckQryExec2->fetch_assoc();
 
             if (password_verify($password, $password_bdd['password'])) {
-              if ($userExistCheckQryExec->num_rows == 0) {
-                  echo "L'utilisateur et/ou le mot de passe est erronée";
-              } elseif ($userExistCheckQryExec->num_rows == 1) {
-                  $userExistFetchQryExec = $userExistCheckQryExec->fetch_assoc();
-                  $_SESSION['user'] = $userExistFetchQryExec;
-                  $db->close();
-              }
-
-            }
-            else {
-              echo "L'utilisateur et/ou le mot de passe est erronée";
+                if ($userExistCheckQryExec->num_rows == 0) {
+                    $errors[] = "L'utilisateur et/ou le mot de passe est erroné";
+                } elseif ($userExistCheckQryExec->num_rows == 1) {
+                    $userExistFetchQryExec = $userExistCheckQryExec->fetch_assoc();
+                    $_SESSION['user'] = $userExistFetchQryExec;
+                    $db->close();
+                }
+            } else {
+                $errors[] = "L'utilisateur et/ou le mot de passe est erroné";
             }
         } elseif (!$login || !$password) {
             echo "Tous les champs n'ont pas été renseignés";
