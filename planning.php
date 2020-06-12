@@ -14,7 +14,8 @@ $page_selected = "planning";
 </head>
 <body>
 <header>
-    <?php include("header.php");
+    <?php
+    include("header.php");
     $errors = [];
     date_default_timezone_set('Europe/Paris');
 
@@ -46,7 +47,7 @@ $page_selected = "planning";
         }
     }
 
-    /*RESERVATION FORM*/
+    /*CONDITIONS INPUT*/
 
     if (!empty($_POST['titre']) and !empty($_POST['description']) and !empty($_POST['date']) and !empty($_POST['heure_debut'])) {
         $titre = $_POST['titre'];
@@ -58,35 +59,6 @@ $page_selected = "planning";
         $_SESSION['titre'] = $titre;
         $_SESSION['description'] = $description;
         $_SESSION['date'] = $date;
-
-        /*VERIF CRENEAUX DEJA EXISTANT*/
-
-        //CRENEAU UNIQUE
-        $debut = $date . " " . $heure_debut;
-        $fin = $date . " " . $heure_fin;
-        $request = "SELECT debut, fin FROM `reservationsalles`.`reservations` WHERE debut = '" . $debut . "' AND fin = '" . $fin . "';";
-        $query = mysqli_query($db, $request);
-        $is_creneaux_av = mysqli_fetch_array($query);
-
-        if (!empty($is_creneaux_av)) {
-            $errors[] = "Ce créneaux est déjà réservé !";
-        }
-        //PLUSIEURS CRENEAUX
-        include 'hour_to_integer.php';
-        $h_to_int_debut = heure_recup($heure_debut);
-        $h_to_int_fin = heure_recup($heure_fin);
-        if (($h_to_int_fin - $h_to_int_debut) > 1) {
-            $creneaux = $h_to_int_fin - $h_to_int_debut;
-            for ($i = 0; $i < $creneaux; $i++) {
-                $h1 = $h_to_int_debut + $i;
-                $debut = $date . " " . $h1;
-                $h2 = $h_to_int_debut + $i + 1;
-                $fin = $date . " " . $h2;
-                $request = "SELECT debut, fin FROM `reservationsalles`.`reservations` WHERE debut = '" . $debut . "' AND fin = '" . $fin . "';";
-                $query = mysqli_query($db, $request);
-                $is_creneaux_av[$i] = mysqli_fetch_row($query);
-            }
-        }
 
         /*TITRE*/
         $titre_required = preg_match("/^[A-Za-z]{1,}.{0,29}$/", $titre);
@@ -123,7 +95,6 @@ $page_selected = "planning";
             }
         }
 
-
         /*HEURE*/
         $heure_pile = preg_match("/^.*[0][0]$/", $heure_debut);
         if (!$heure_pile) {
@@ -145,18 +116,26 @@ $page_selected = "planning";
         if ($heure_fin < 9 or $heure_fin > 19) {
             $errors[] = "L'heure de fin doit être comprise entre 09:00 et 19:00.";
         }
-        if (isset($is_creneaux_av)) {
-            foreach ($is_creneaux_av as $key => $value) {
-                var_dump($value);
-                if ($value == null) {
-                    include 'form_multiples_creneaux.php';
-                    break;
-                }
-                //}
-            }
-        } elseif (empty($errors)) {
-            //ENVOI PLUSIEURS CRENAUX
 
+        /*VERIFICATION EXISTANTS*/
+
+        if (empty($errors)){
+            include 'hour_to_integer.php';
+            $h_to_int_debut = heure_recup($heure_debut);
+            $h_to_int_fin = heure_recup($heure_fin);
+
+            //CRENEAU UNIQUE
+            if (($h_to_int_fin - $h_to_int_debut) == 1){
+                $debut = $date . " " . $heure_debut;
+                $fin = $date . " " . $heure_fin;
+                $request = "SELECT debut, fin FROM `reservationsalles`.`reservations` WHERE debut = '" . $debut . "' AND fin = '" . $fin . "';";
+                $query = mysqli_query($db, $request);
+                $is_creneaux_av = mysqli_fetch_array($query);
+                if (!empty($is_creneaux_av)) {
+                    $errors[] = "Ce créneaux est déjà réservé !";
+                }
+            }
+            //CRENEAUX MULTIPLES
             if (($h_to_int_fin - $h_to_int_debut) > 1) {
                 $creneaux = $h_to_int_fin - $h_to_int_debut;
                 for ($i = 0; $i < $creneaux; $i++) {
@@ -164,16 +143,46 @@ $page_selected = "planning";
                     $debut = $date . " " . $h1;
                     $h2 = $h_to_int_debut + $i + 1;
                     $fin = $date . " " . $h2;
+                    $request = "SELECT debut, fin FROM `reservationsalles`.`reservations` WHERE debut = '" . $debut . "' AND fin = '" . $fin . "';";
+                    $query = mysqli_query($db, $request);
+                    $is_creneaux_av[$i] = mysqli_fetch_row($query);
+                    if (isset($is_creneaux_av[$i][0])) {
+                        $not_all_null = 1;
+                    }
+                }
+                if (isset($not_all_null)){
+                    foreach ($is_creneaux_av as $key => $value){
+                        if ($value == null) {
+                            include 'form_multiples_creneaux.php';
+                            break;
+                            $tester = 1;
+                        }
+                    }
+                    if (!isset($tester)){
+                        $errors[] = "Aucun créneau dans les horaires choisis n'est disponible.";
+                    }
+                }
+            }
+            if (empty($errors)){
+                if (($h_to_int_fin - $h_to_int_debut) > 1) {
+                    $creneaux = $h_to_int_fin - $h_to_int_debut;
+                    for ($i = 0; $i < $creneaux; $i++) {
+                        $h1 = $h_to_int_debut + $i;
+                        $debut = $date . " " . $h1;
+                        $h2 = $h_to_int_debut + $i + 1;
+                        $fin = $date . " " . $h2;
+                        $request = "INSERT INTO `reservationsalles`.`reservations`(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
+                        $query = mysqli_query($db, $request);
+                    }
+                } else {
                     $request = "INSERT INTO `reservationsalles`.`reservations`(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
                     $query = mysqli_query($db, $request);
                 }
-            } else {
-                $request = "INSERT INTO `reservationsalles`.`reservations`(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
-                $query = mysqli_query($db, $request);
+                header('location: planning.php');
             }
-            header('location: planning.php');
         }
-    } elseif (isset($_POST['reservation_button']) and !empty($_POST)) {
+    }
+    elseif (isset($_POST['reservation_button']) and !empty($_POST)) {
         $errors[] = "Tous les champs doivent être remplis.";
     }
     ?>
