@@ -16,14 +16,7 @@ $page_selected = "inscription";
           <?php include 'header.php';
             $errors = [];
             if (isset($_POST['submit'])) {
-                      $requete = "INSERT INTO utilisateurs (login,password) VALUES ('$login','$password_modified')";
-
-                      $query = mysqli_query($connexion, $requete);
-
-                      header('location:connexion.php');
-
-                      } else $errors[] ="Les mots de passe doivent être identiques";
-                } else $errors[]="Veuillez saisir tous les champs";
+                $login = htmlentities(trim($_POST['login']));
                 $password = htmlentities(trim($_POST['password']));
                 $mdpcheck = htmlentities(trim($_POST['mdp_check']));
                 $password_modified =  password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
@@ -45,6 +38,13 @@ $page_selected = "inscription";
                         $errors[] = "Les mots de passe ne sont pas identiques.";
                     }
                     $password_required = preg_match("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $password);
+                    if (!$password_required) {
+                        $errors[] = "Le mot de passe doit :<br>- Contenir entre 8 et 20 caractères.<br>- Contenir au moins 1 caractère spécial, 1 nombre, 1 majuscule et 1 minuscule.";
+                    }
+                    /*ENVOI BDD*/
+                    if (empty($errors)) {
+                        $connexion = mysqli_connect('localhost', 'root', '', 'reservationsalles');
+                        $requete = "INSERT INTO `reservationsalles`.`utilisateurs` (login,password) VALUES ('$login','$password_modified')";
                         $query = mysqli_query($connexion, $requete);
                         header('location:connexion.php');
                     }
