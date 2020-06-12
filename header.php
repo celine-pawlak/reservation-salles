@@ -16,8 +16,9 @@ if (in_array($page_selected, ['connexion', 'inscription']) and isset($_SESSION['
 //     header('location: connexion.php');
 // }
 
-/*FONCTION ERREURS*/
+/*FONCTIONS*/
 
+/*ERREURS*/
 /**
  * @param $errors
  * @return string
@@ -42,6 +43,9 @@ function renderErrors($errors)
         return "";
     }
 }
+
+/*NOM DES JOURS DE LA SEMAINE*/
+include 'get_week_days.php';
 
 ?>
 
