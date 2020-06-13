@@ -13,6 +13,7 @@ $page_selected = "connexion";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/style.css">
+    <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
     <title>Connexion</title>
 </head>
 <body>
@@ -35,14 +36,14 @@ $page_selected = "connexion";
 
             if (password_verify($password, $password_bdd['password'])) {
                 if ($userExistCheckQryExec->num_rows == 0) {
-                    echo "L'utilisateur et/ou le mot de passe est erronée";
+                    $errors[] = "L'utilisateur et/ou le mot de passe est erroné";
                 } elseif ($userExistCheckQryExec->num_rows == 1) {
                     $userExistFetchQryExec = $userExistCheckQryExec->fetch_assoc();
                     $_SESSION['user'] = $userExistFetchQryExec;
                     $db->close();
                 }
             } else {
-                echo "L'utilisateur et/ou le mot de passe est erronée";
+                $errors[] = "L'utilisateur et/ou le mot de passe est erroné";
             }
         } elseif (!$login || !$password) {
             echo "Tous les champs n'ont pas été renseignés";

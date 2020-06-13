@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
     <link rel="stylesheet" href="fa.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>

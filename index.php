@@ -10,6 +10,7 @@ $page_selected = "index";
         <meta name="viewport" content="width=device-width, user-scalable=yes"/>
         <link rel="stylesheet" href="styles/css/main.css">
         <link rel="stylesheet" href="styles/css/style.css">
+        <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
