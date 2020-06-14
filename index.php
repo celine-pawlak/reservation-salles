@@ -18,7 +18,6 @@ $page_selected = "index";
             $errors = [];
             
             ?>
-
         </header>
         <main>
             <div class="content">

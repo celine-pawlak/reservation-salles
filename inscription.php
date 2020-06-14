@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="styles/css/main.css">
         <link rel="stylesheet" href="styles/css/style.css">
         <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="body-inscription">
         <header>
           <?php include 'header.php';
             $errors = [];
@@ -24,21 +25,21 @@
                     /*LOGIN*/
                     $login_required = preg_match("/^(?=.*[A-Za-z0-9]$)[A-Za-z\d\-\_]{3,19}$/", $login);
                     if (!$login_required) {
-                        $errors[] = "Le login doit :<br>- Contenir entre 4 et 20 caractères.<br>- Commencer par une lettre<br>- Finir par une lettre ou nombre.<br>- Ne contenir aucun caractère spécial (sauf - et _).";
+                        $errors[] = "<span>Le login doit :<br>- Contenir entre 4 et 20 caractères.<br>- Commencer par une lettre<br>- Finir par une lettre ou nombre.<br>- Ne contenir aucun caractère spécial (sauf - et _).</span>";
                     }
                     $request = "SELECT login FROM `reservationsalles`.`utilisateurs` WHERE login = '$login';";
                     $query = mysqli_query($db, $request);
                     $login_check = mysqli_fetch_array($query);
                     if (!empty($login_check)) {
-                        $errors[] = "Ce login existe déjà !";
+                        $errors[] = "<span>Ce login existe déjà !</span>";
                     }
                     /*PASSWORD*/
                     if ($password != $mdpcheck) {
-                        $errors[] = "Les mots de passe ne sont pas identiques.";
+                        $errors[] = "<span>Les mots de passe ne sont pas identiques.</span>";
                     }
                     $password_required = preg_match("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $password);
                     if (!$password_required) {
-                        $errors[] = "Le mot de passe doit :<br>- Contenir entre 8 et 20 caractères.<br>- Contenir au moins 1 caractère spécial, 1 nombre, 1 majuscule et 1 minuscule.";
+                        $errors[] = "<span>Le mot de passe doit :<br>- Contenir entre 8 et 20 caractères.<br>- Contenir au moins 1 caractère spécial, 1 nombre, 1 majuscule et 1 minuscule.</span>";
                     }
                     /*ENVOI BDD*/
                     if (empty($errors)) {
@@ -48,14 +49,14 @@
                         header('location:connexion.php');
                     }
                 } else {
-                    $errors[] = "Veuillez saisir tous les champs";
+                    $errors[] = "<br><span>Veuillez saisir tous les champs</span>";
                 }
             }
 
             ?>
 
         </header>
-        <main>
+        <main class="main-inscription">
             <div class="content">
              <?= renderErrors($errors)?>
             </div>
@@ -67,16 +68,16 @@
                 <input type="text" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
 
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="Entrer un mot de passe"> <br />
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe"> <br />
 
                 <label for="mdp-check">Confirmation mot de passe</label>
-                <input type="password" id="mdp_check" name="mdp_check" placeholder="Confirmer le mot de passe"> <br/>
+                <input type="password" id="mdp_check" name="mdp_check" placeholder="Confirmez votre mot de passe"> <br/>
 
-                <div class="button" >
+                <div class="inscription-button" >
                     <input type="submit" value="VALIDER" name="submit">
                 </div>
 
-                <br><p>Vous avez déjà un compte ?<a href="connexion.php">Connectez-vous</a></p><br>
+                <br><p>Vous avez déjà un compte ? <a href="connexion.php">Se connecter</a></p><br>
 
              </form>
         </main>
