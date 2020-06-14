@@ -44,8 +44,11 @@ function renderErrors($errors)
     }
 }
 
-/*NOM DES JOURS DE LA SEMAINE*/
+/* GENERE LE NOM DES JOURS DE LA SEMAINE */
 include 'functions/get_week_days.php';
+
+/* GENERE UN AFFICHAGE DE PLAGE HORAIRE */
+include 'functions/slot_generator.php';
 
 ?>
 
