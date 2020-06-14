@@ -64,7 +64,101 @@
 
 /*** INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.banniere{
+    background:url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
+    background-size:cover; 
+    color:white;
+    height:400px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-shadow:1px 1px 1px black;
+    padding:2%;
+    
+}
 
+.banniere h1{font-family: 'Courgette', cursive;}
+
+.banniere i {
+    font-size:50px;
+    margin-right:1%;
+}
+
+.column{
+    display:flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-size:15px;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+.column h2{
+    text-align:center;
+    font-weight:200;
+    color:#C08D32;
+}
+
+.ligne{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card{
+    border:0.1px solid #F5DA95;
+    width: 30%;
+    text-align: justify;
+}
+
+.image img{
+    width:100%;
+}
+
+.card h3{
+    font-size:25px;
+    text-align: center;
+    font-weight:200;
+    color:#C08D32;
+}
+
+.card p{
+    font-size:15px;
+    font-weight:100;
+}
+
+.espace{
+    padding:5%;
+}
+
+.card a{
+    font-size:15px;
+    background-color:#C08D32;
+    border:0.1px solid #C08D32;
+    border-radius:50px;
+    color:white;
+    padding:2%;
+    width:40%;
+    text-align: center;
+}
+
+.card a:hover{
+    background-color:white;
+    color:#C08D32;
+    transition:1s;
+}
+
+.card a:active{
+    background-color:#F5DA95;
+    color:white;
+    transition:1s;
+}
+
+.index-button{
+    display: flex;
+    justify-content:space-evenly;
+    
+}
 
 /*** RESPONSIVE INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
