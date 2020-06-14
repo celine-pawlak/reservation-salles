@@ -119,13 +119,13 @@ $page_selected = "planning";
 
         /*VERIFICATION EXISTANTS*/
 
-        if (empty($errors)){
+        if (empty($errors)) {
             include 'hour_to_integer.php';
             $h_to_int_debut = heure_recup($heure_debut);
             $h_to_int_fin = heure_recup($heure_fin);
 
             //CRENEAU UNIQUE
-            if (($h_to_int_fin - $h_to_int_debut) == 1){
+            if (($h_to_int_fin - $h_to_int_debut) == 1) {
                 $debut = $date . " " . $heure_debut;
                 $fin = $date . " " . $heure_fin;
                 $request = "SELECT debut, fin FROM `reservationsalles`.`reservations` WHERE debut = '" . $debut . "' AND fin = '" . $fin . "';";
@@ -150,20 +150,20 @@ $page_selected = "planning";
                         $not_all_null = 1;
                     }
                 }
-                if (isset($not_all_null)){
-                    foreach ($is_creneaux_av as $key => $value){
+                if (isset($not_all_null)) {
+                    foreach ($is_creneaux_av as $key => $value) {
                         if ($value == null) {
                             include 'form_multiples_creneaux.php';
                             break;
                             $tester = 1;
                         }
                     }
-                    if (!isset($tester)){
+                    if (!isset($tester)) {
                         $errors[] = "Aucun créneau dans les horaires choisis n'est disponible.";
                     }
                 }
             }
-            if (empty($errors)){
+            if (empty($errors)) {
                 if (($h_to_int_fin - $h_to_int_debut) > 1) {
                     $creneaux = $h_to_int_fin - $h_to_int_debut;
                     for ($i = 0; $i < $creneaux; $i++) {
@@ -181,8 +181,7 @@ $page_selected = "planning";
                 header('location: planning.php');
             }
         }
-    }
-    elseif (isset($_POST['reservation_button']) and !empty($_POST)) {
+    } elseif (isset($_POST['reservation_button']) and !empty($_POST)) {
         $errors[] = "Tous les champs doivent être remplis.";
     }
     ?>
@@ -200,28 +199,27 @@ $page_selected = "planning";
         <table class="week-calendar">
             <thead>
             <tr>
-                <th>Heures</th>
-                <?php
-
-                ?>
+                <th>Heure</th>
+                <?php $weekDays = getWeekDays();
+                foreach ($weekDays as $weekDay) : ?>
+                    <th><?= $weekDay; ?></th>
+                <?php endforeach; ?>
             </tr>
             </thead>
             <tbody>
+            <?php $slots = slot_genrator(8, 19);
+            foreach ($slots as $slot) : ?>
+                <tr>
+                    <td>
+                        <?= $slot; ?>
+                    </td>
+                    <?php $weekDays = getWeekDays();
+                    foreach ($weekDays as $weekDay) : ?>
+                        <td><?= $weekDay; ?></td>
+                    <?php endforeach; ?>
+                </tr>
+            <?php endforeach; ?>
             <tr>
-                <td>
-                    <span>8h00 - 9h00</span>
-                </td>
-                <td></td>
-                <td rowspan="2">
-                    <div class="project">
-                        <div class="project">Projet: Developper Agenda</div>
-                    </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
             </tr>
             </tbody>
         </table>
