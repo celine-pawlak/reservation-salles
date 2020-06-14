@@ -37,9 +37,7 @@ $page_selected = "index";
             if(isset($_SESSION['user'])){
                 $user = $_SESSION['user'];
             echo"
-                
-                
-                
+
                 <section class='column'>
                     <h2> Bonjour Machin, sélectionnez la salle idéale pour votre événement </h2><br>
                     <section class='ligne'>
