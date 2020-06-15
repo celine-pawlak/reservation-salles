@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Modifier réservations - Réservation salles</title>
 </head>
 <body>
@@ -88,6 +89,7 @@
         ?>
     </header>
     <main>
+        <div class="content">
         <?= renderErrors($errors) ?>
         <?php
         foreach($user_reservations as $key => $value)
@@ -111,7 +113,7 @@
                 <?php
             }
         ?>
-
+        </div>
     </main>
     <footer>
 

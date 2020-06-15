@@ -60,6 +60,7 @@
 .footer{
     display:flex;
     flex-direction: row;
+    align-items: baseline;
     justify-content: space-around;
     height:300px;
     background-color:#C08D32;
@@ -67,10 +68,8 @@
     padding:5%;
 }
 
-.RS i{
-    display: flex;
-    flex-direction:row ;
-    justify-content: space-between;
+.RS ul li{
+    display: inline; 
 }
 
 .footer i{
@@ -379,6 +378,110 @@
 
 /****PROFIL****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.body-profil span{
+    font-style:italic;
+    color:darkorange;
+    font-size:15px;
+}
+
+.main-profil{
+    background-image: url();
+    background-size:contain;
+    padding:5%;
+}
+.contour-profil{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+.form-profil{
+    display:flex;
+    flex-direction:column;
+    background-color: #333;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    padding:5%;
+    width:60%;
+    border-radius:20px;
+    margin-bottom:2%;
+}
+
+.form-profil h1{
+    display: flex;
+    justify-content: center;
+    border-bottom:0.5px solid darkorange;
+    padding-bottom:3%;
+}
+
+.form-profil p,
+.form-profil p a,
+.form-profil label{
+    font-size:18px;
+}
+
+.form-profil p a{text-decoration: underline;}
+
+.form-profil p a:hover{color:darkorange;}
+
+.form-profil input[type="text"],
+.form-profil input[type="password"]{
+    width:100%;
+    height:40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:15px;
+    padding:1%;
+    border:none;
+    color:darkorange; 
+}
+
+.form-profil input[type="text"]:hover,
+.form-profil input[type="password"]:hover{
+    border:1px solid darkorange;
+}
+
+.profil-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color:darkorange;
+    font-family: 'Montserrat', sans-serif;
+    width:60%;
+    height:40px;
+    padding:1%;
+    border-radius:50px;
+    border:none;
+    font-size:20px;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    margin-top:2%;
+    margin-bottom:2%;
+    
+}
+
+
+.profil-button:hover{
+    transition:1s;
+    background-color:#FFC146;
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+    box-shadow: 0 5px #CE8025;
+     
+}
+
+.profil-button:active {
+
+  box-shadow: 0 4px #CE8025;
+  transform: translateY(4px);
+}
+
+
 
 
 /****RESPONSIVE PROFIL****/
