@@ -54,7 +54,7 @@ header li {
 
 header {
     background-color: #c08d32;
-    color:white;
+    color: white;
     font-family: 'Lora';
 }
 
@@ -130,9 +130,9 @@ header a:hover,
     font-family: 'Montserrat';
 }
 
-.after:after{
-    content:"・";
-    color:white;
+.after:after {
+    content: "・";
+    color: white;
 }
 
 .menu ul li {
@@ -144,7 +144,8 @@ header a:hover,
     font-size: 40px;
 }
 
-.RS ul li a:hover,.menu ul li:hover{
+.RS ul li a:hover,
+.menu ul li:hover {
     color: #333;
 }
 
@@ -320,27 +321,31 @@ header a:hover,
 
 /****INSCRIPTION****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-.body-inscription{
+.body-inscription {
     height: 100vh;
 }
-.body-inscription span{
-    font-style:italic;
-    color:darkorange;
-    font-size:15px;
-}
-.main_connexion{
-    background-image: url(../../ressources/dark-1845065_1920.jpg);
-    background-size:cover;
-    background-position: fixed;
-}
-.main-inscription{
-    background-image: url(https://data.1freewallpapers.com/download/bengal-fire-sparks-glitter-dark-background.jpg);
-    background-size:contain;
+
+.body-inscription span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
 }
 
-.main-inscription, .main_connexion{
-    display:flex;
-    flex-direction:column;
+.main_connexion {
+    background-image: url(../../ressources/dark-1845065_1920.jpg);
+    background-size: cover;
+    background-position: fixed;
+}
+
+.main-inscription {
+    background-image: url(https://data.1freewallpapers.com/download/bengal-fire-sparks-glitter-dark-background.jpg);
+    background-size: contain;
+}
+
+.main-inscription,
+.main_connexion {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     height: 100%;
 }
@@ -351,9 +356,9 @@ header a:hover,
     background-color: rgba(0, 0, 0, 0.832);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    padding:5%;
+    padding: 5%;
     margin: auto;
-    min-width:35vw;
+    min-width: 35vw;
 }
 
 .form-inscription h1 {
@@ -362,9 +367,11 @@ header a:hover,
     border-bottom: 0.5px solid darkorange;
     padding-bottom: 3%;
 }
-.form-inscription p{
+
+.form-inscription p {
     text-align: center;
 }
+
 .form-inscription p,
 .form-inscription p a,
 .form-inscription label {
@@ -431,8 +438,8 @@ header a:hover,
 }
 
 .form-inscription input[type="submit"]:active {
-  box-shadow: 0 4px #CE8025;
-  transform: translateY(4px);
+    box-shadow: 0 4px #CE8025;
+    transform: translateY(4px);
 }
 
 
@@ -603,6 +610,63 @@ header a:hover,
     max-width: 1600px;
 }
 */
+
+.week-container-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.week-calendar{
+    width:80%;
+    padding:1%;
+}
+
+.week-calendar table {
+    border-collapse: collapse;
+}
+
+
+.week-calendar th,
+td,
+table {
+    border: 0.1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    border-radius:5px;
+}
+
+.week-calendar th {
+    background-color: #333;
+    color: white;
+    height: 20px;
+    padding: 1%;
+}
+
+.week-calendar td{
+    font-size:15px;
+    font-weight:200;
+}
+
+.week-calendar .heure-titre{
+    color:white;
+    background-color:#C08D32;
+}
+
+.week-calendar .heure {
+    background-color:#C08D32;
+    color:white;
+    text-align: center;
+}
+
+.week-calendar .reservation{
+     background-color: lightgray;
+}
+
+.week-calendar .reservation a:hover{
+    background-color:grey;
+    text-decoration: underline;
+    border-radius:5px;
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 

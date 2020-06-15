@@ -14,9 +14,9 @@ mysqli_close($db);
                 $user = $_SESSION['user']['login'];
                 echo"
                     <ul>
-                        <a href='index.php'><li>Accueil</li></a>
+                        <a href='index.php'><li class='after'>Accueil</li></a>
                         <a href='planning.php'><li　class='after'>Planning</li></a>
-                        <a href='profil.php' ><li >Profil</li></a>
+                        <a href='profil.php'><li >Profil</li></a>
                     </ul>
                 ";
                 }else{

@@ -201,7 +201,7 @@ $page_selected = "planning";
         <table class="week-calendar">
             <thead>
             <tr>
-                <th>Heure</th>
+                <th class="heure-titre">Heure</th>
                 <?php
                 $weekDays = getWeekDays();
                 foreach ($weekDays as $weekDay) : ?>
@@ -216,7 +216,7 @@ $page_selected = "planning";
             foreach ($slots as $slot) :
                 ?>
                 <tr>
-                    <td>
+                    <td class="heure">
                         <?= $slot; ?>
                     </td>
                     <?php
@@ -233,7 +233,7 @@ $page_selected = "planning";
                             if ((date('G', strtotime($events['debut'])) . "h00") == $slot && (strftime('%A', (date(strtotime($events['debut']))))) == $weekDay) :
                                 $v = 1;
                                 ?>
-                                <td>
+                                <td class="reservation">
                                     <?= $_SESSION['user']['login']; ?>
                                     <br>
                                     <a href="reservation.php?id=<?= $events['id'] ?>">
