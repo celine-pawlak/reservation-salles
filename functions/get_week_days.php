@@ -5,7 +5,7 @@
  */
 function getWeekDays()
 {
-    setlocale(LC_TIME, 'fr_FR.UTF8');
+//    setlocale(LC_TIME, 'fr_FR.UTF8');
     $nowDay = time();
 //    $weekDays[] = strftime('%A', $nowDay);
     $weekDays[] = strftime('%A', $nowDay);

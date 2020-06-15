@@ -4,6 +4,9 @@ session_start();
 
 $db = mysqli_connect("localhost", "root", "", "reservationsalles");
 
+// Set local information fo time according to locale fr_Fr
+setlocale(LC_TIME, 'fr_FR.UTF8');
+
 /*REDIRECTIONS SELON SESSION*/
 
 if (in_array($page_selected, ['profil', 'user_reservation', 'reservation', 'form_multiples_creneaux', 'planning']) and !$_SESSION['user']) {
