@@ -28,10 +28,13 @@ $page_selected = "connexion";
 
         if ($login && $password) {
             $db = new mysqli("localhost", "root", "", "reservationsalles");
+
+            // User Info Select Query
             $userExistCheckQry = "select `id`, `login`, `password` from `reservationsalles`.`utilisateurs` where `login`='$login'";
             $userExistCheckQryExec = $db->query($userExistCheckQry);
-            $userExistCheckQryExec2 = $db->query($userExistCheckQry);
-            $password_bdd = $userExistCheckQryExec2->fetch_assoc();
+
+            $userPwdCheckQryExec = $db->query($userExistCheckQry);
+            $password_bdd = $userPwdCheckQryExec->fetch_assoc();
 
             if (password_verify($password, $password_bdd['password'])) {
                 if ($userExistCheckQryExec->num_rows == 0) {

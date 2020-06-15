@@ -1,4 +1,5 @@
 <?php
+
 $page_selected = "planning";
 ?>
 
@@ -190,7 +191,8 @@ $page_selected = "planning";
     <div class="content">
         <?= renderErrors($errors) ?>
         <h2>Réserver un crénaux *</h2>
-        <?php include 'reservation-form.php'; ?>
+        <?php
+        include 'reservation-form.php'; ?>
         <p><em> * Les réservations se font du lundi au vendredi et de 8h et 19h.<br>Les créneaux ont une durée fixe
                 d’une heure.</em></p>
     </div>
@@ -199,25 +201,55 @@ $page_selected = "planning";
             <thead>
             <tr>
                 <th>Heure</th>
-                <?php $weekDays = getWeekDays();
+                <?php
+                $weekDays = getWeekDays();
                 foreach ($weekDays as $weekDay) : ?>
                     <th><?= $weekDay; ?></th>
-                <?php endforeach; ?>
+                    <?php
+                endforeach; ?>
             </tr>
             </thead>
             <tbody>
-            <?php $slots = slot_genrator(8, 19);
-            foreach ($slots as $slot) : ?>
+            <?php
+            $slots = slot_genrator(8, 19);
+            foreach ($slots as $slot) :
+                ?>
                 <tr>
                     <td>
                         <?= $slot; ?>
                     </td>
-                    <?php $weekDays = getWeekDays();
+                    <?php
+                    $weekDays = getWeekDays();
                     foreach ($weekDays as $weekDay) : ?>
-                        <td><?= $weekDay; ?></td>
-                    <?php endforeach; ?>
+                        <?php
+                        $userEventsQry = "select * from `reservationsalles`.`reservations`";
+                        $userEventsQryExec = $db->query($userEventsQry);
+                        $userEventsFetchExec = $userEventsQryExec->fetch_all(1); ?>
+                        <?php
+                        $v = 0;
+                        foreach ($userEventsFetchExec as $events) : ?>
+                            <?php
+                            if ((date('G', strtotime($events['debut'])) . "h00") == $slot && (strftime('%A', (date(strtotime($events['debut']))))) == $weekDay) :
+                                $v = 1;
+                                ?>
+                                <td>
+                                    <?= $_SESSION['user']['login']; ?>
+                                    <br>
+                                    <?= $events['titre']; ?></td>
+                                <?php
+                            endif; ?>
+                            <?php
+                        endforeach; ?>
+                        <?php
+                        if ($v == 0) : ?>
+                            <td>Réserver</td>
+                            <?php
+                        endif; ?>
+                        <?php
+                    endforeach; ?>
                 </tr>
-            <?php endforeach; ?>
+                <?php
+            endforeach; ?>
             <tr>
             </tr>
             </tbody>
@@ -225,7 +257,8 @@ $page_selected = "planning";
     </div>
 </main>
 <footer>
-    <?php include("footer.php") ?>
+    <?php
+    include("footer.php") ?>
 </footer>
 </body>
 </html>

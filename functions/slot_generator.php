@@ -8,14 +8,15 @@
 function slot_genrator(int $beginHour, int $endHour): array
 {
     $slotFirstHour = [];
-    $slotSecondHour = [];
+//    $slotSecondHour = [];
     $slot = [];
     $i = 0;
 
     while ($beginHour < $endHour) {
         $slotFirstHour[] = $beginHour . "h00";
-        $slotSecondHour[] = $beginHour + 1 . "h00";
-        $slot[] = $slotFirstHour[$i] . " - " . $slotSecondHour[$i];
+//        $slotSecondHour[] = $beginHour + 1 . "h00";
+//        $slot[] = $slotFirstHour[$i] . " - " . $slotSecondHour[$i];
+        $slot[] = $slotFirstHour[$i];
         ++$beginHour;
         ++$i;
     }
