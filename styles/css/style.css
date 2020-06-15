@@ -129,6 +129,11 @@ header a:hover,
     font-family: 'Montserrat';
 }
 
+.after:after{
+    content:"・";
+    color:white;
+}
+
 .menu ul li {
     display: inline;
     font-size: 20px;
@@ -443,7 +448,6 @@ header a:hover,
         align-items: center;
         text-align: center;
     }
-
 }
 
 @media (max-width:900px) {

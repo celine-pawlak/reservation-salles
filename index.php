@@ -17,7 +17,6 @@ $page_selected = "index";
         <header>
           <?php include("header.php");
             $errors = [];
-
             ?>
             <section class='banniere'>
                 <h1>Roomy</h1>
@@ -28,9 +27,6 @@ $page_selected = "index";
             <div class="content">
                 <?= renderErrors($errors) ?>
             </div>
-
-
-
             <?php
 
             if(isset($_SESSION['user'])){
@@ -38,7 +34,7 @@ $page_selected = "index";
             echo"
 
                 <section class='column'>
-                    <h2> Bonjour $user, réservez un crénaux et accédez à une salle par thème </h2><br>
+                    <h2> Bonjour $user, réservez un créneaux et accédez à une salle par thème </h2><br>
                     <section class='ligne'>
                         <div class='card'>
                             <div class='image'>
