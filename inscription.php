@@ -58,27 +58,26 @@
         <main class="main-inscription">
             <div class="content">
              <?= renderErrors($errors)?>
-            </div>
-
             <form class="form-inscription" action="inscription.php" method="post">
                 <h1> INSCRIPTION </h1><br/>
 
                 <label for="login">Identifiant</label>
                 <input type="text" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
-
+                <br>
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe"> <br />
-
+                <br>
                 <label for="mdp-check">Confirmation mot de passe</label>
                 <input type="password" id="mdp_check" name="mdp_check" placeholder="Confirmez votre mot de passe"> <br/>
-
+                <br>
                 <div class="inscription-button" >
                     <input type="submit" value="VALIDER" name="submit">
                 </div>
 
-                <br><p>Vous avez déjà un compte ? <a href="connexion.php">Se connecter</a></p><br>
+                <br><p>Vous avez déjà un compte ?<br><a href="connexion.php">Se connecter</a></p><br>
 
              </form>
+            </div>
         </main>
         <footer>
           <?php include("footer.php")?>
