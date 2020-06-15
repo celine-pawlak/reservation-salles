@@ -3,9 +3,16 @@
 
 /* MONTSERRAT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* LORA */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 
 .content {
     max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 html,
@@ -21,6 +28,7 @@ a {
 
 * {
     transition: ease 0.05s;
+    box-sizing: border-box;
 }
 
 /*** HEADER ***/
@@ -44,8 +52,8 @@ header li {
 
 header {
     background-color: #c08d32;
-    color: white;
-    font-family: 'Montserrat';
+    color:white;
+    font-family: 'Lora';
 }
 
 header h1:hover,
@@ -305,19 +313,28 @@ header a:hover,
 
 /****INSCRIPTION****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.body-inscription span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
+.body-inscription{
+    height: 100vh;
+    overflow-y: hidden;
+}
+.body-inscription span{
+    font-style:italic;
+    color:darkorange;
+    font-size:15px;
+}
+.main_connexion{
+    background-image: url(../../ressources/dark-1845065_1920.jpg);
+}
+.main-inscription{
+    background-image: url(https://data.1freewallpapers.com/download/bengal-fire-sparks-glitter-dark-background.jpg);
 }
 
-.main-inscription {
-    display: flex;
-    flex-direction: column;
+.main-inscription, .main_connexion{
+    display:flex;
+    flex-direction:column;
     align-items: center;
-    background-image: url(https://data.1freewallpapers.com/download/bengal-fire-sparks-glitter-dark-background.jpg);
-    background-size: contain;
+    background-size:contain;
+    height: 100%;
 }
 
 .form-inscription {
@@ -326,11 +343,9 @@ header a:hover,
     background-color: rgba(0, 0, 0, 0.832);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    padding: 5%;
-    width: 40%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-
+    padding:5%;
+    margin: auto;
+    min-width:35vw;
 }
 
 .form-inscription h1 {
@@ -339,7 +354,9 @@ header a:hover,
     border-bottom: 0.5px solid darkorange;
     padding-bottom: 3%;
 }
-
+.form-inscription p{
+    text-align: center;
+}
 .form-inscription p,
 .form-inscription p a,
 .form-inscription label {
@@ -406,9 +423,8 @@ header a:hover,
 }
 
 .form-inscription input[type="submit"]:active {
-
-    box-shadow: 0 4px #CE8025;
-    transform: translateY(4px);
+  box-shadow: 0 4px #CE8025;
+  transform: translateY(4px);
 }
 
 
