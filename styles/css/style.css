@@ -41,6 +41,7 @@ header h6,
 header ul,
 header li {
     margin: 0;
+    font-weight: normal;
 }
 
 header ul,
@@ -313,7 +314,6 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .body-inscription{
     height: 100vh;
-    overflow-y: hidden;
 }
 .body-inscription span{
     font-style:italic;
@@ -322,16 +322,18 @@ header a:hover,
 }
 .main_connexion{
     background-image: url(../../ressources/dark-1845065_1920.jpg);
+    background-size:cover;
+    background-position: fixed;
 }
 .main-inscription{
     background-image: url(https://data.1freewallpapers.com/download/bengal-fire-sparks-glitter-dark-background.jpg);
+    background-size:contain;
 }
 
 .main-inscription, .main_connexion{
     display:flex;
     flex-direction:column;
     align-items: center;
-    background-size:contain;
     height: 100%;
 }
 
