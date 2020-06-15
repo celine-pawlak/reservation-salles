@@ -21,7 +21,7 @@ $page_selected = "index";
         
             ?>
             <section class='banniere'>
-                <i class='fas fa-heart-circle'></i><h1>Roomy</h1>
+                <h1>Roomy</h1>
             </section>
             
         </header>
@@ -35,11 +35,11 @@ $page_selected = "index";
             <?php
     
             if(isset($_SESSION['user'])){
-                $user = $_SESSION['user'];
+                $user = $_SESSION['user']['login'];
             echo"
 
                 <section class='column'>
-                    <h2> Bonjour Machin, sélectionnez la salle idéale pour votre événement </h2><br>
+                    <h2> Bonjour $user, réservez un crénaux et accédez à une salle par thème </h2><br>
                     <section class='ligne'>
                         <div class='card'>
                             <div class='image'>
@@ -90,7 +90,7 @@ $page_selected = "index";
         }else{
             echo"
                 <section class='column'>
-                    <h2>Sélectionnez la salle idéale pour votre événement </h2><br>
+                    <h2>Réservez un créneaux et accédez à une salle par thème</h2><br>
                     <section class='ligne'>
                         <div class='card'>
                             <div class='image'>
@@ -144,17 +144,7 @@ $page_selected = "index";
     
     
             ?>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
 
         </main>
         <footer>

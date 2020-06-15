@@ -15,9 +15,7 @@
 <header>
     <?php include("header.php");
     $errors = []; 
-    
-   
-        
+
     $servname="localhost";
     $dbname="reservationsalles";
     $user="root";
