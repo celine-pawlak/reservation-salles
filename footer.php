@@ -16,7 +16,7 @@ mysqli_close($db);
                     <ul>
                         <a href='index.php'><li class='after'>Accueil</li></a>
                         <a href='planning.php'><li　class='after'>Planning</li></a>
-                        <a href='profil.php'><li >Profil</li></a>
+                        <a href='profil.php'><li>Profil</li></a>
                     </ul>
                 ";
                 }else{

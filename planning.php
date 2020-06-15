@@ -189,9 +189,9 @@ $page_selected = "planning";
 
 </header>
 <main>
-    <div class="content">
+    <div class="content reservation-form">
         <?= renderErrors($errors) ?>
-        <h2>Réserver un crénaux *</h2>
+        <h2>Réservez un créneau *</h2>
         <?php
         include 'reservation-form.php'; ?>
         <p><em> * Les réservations se font du lundi au vendredi et de 8h et 19h.<br>Les créneaux ont une durée fixe

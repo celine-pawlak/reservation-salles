@@ -679,6 +679,62 @@ table {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+.reservation-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:80%;
+    margin-top:5%;
+}
+
+
+
+.form-reservation-input label{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-reservation-input input[type="text"], 
+.form-reservation-input input[type="date"],
+.form-reservation-input input[type="time"]
+{
+    border-radius:5px;
+    border:0.1px solid lightgray;
+    height:25px;
+    outline-color:#C08D32;
+    font-family: 'Montserrat', sans-serif;
+    padding:1%;
+}
+
+
+.form-reservation-input button{
+    border-radius:10px;
+    height:40px;
+    border:0.1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+    padding:2%;
+    font-size:15px;
+    background-color:#333;
+    color:white;
+    font-weight:100;
+    outline:none;
+}
+
+.form-reservation-input button:hover{
+    color:#333;
+    background-color:lightgray;
+    border:1px solid gray;
+    transition :1s;
+}
+
+.form-reservation-input button:active{
+    color:white;
+    background-color:grey;
+    border:1px solid #333;
+    transition :2s;
+}
+
+
 
 /****RESPONSIVE RESERVATION-FORM****/
 
