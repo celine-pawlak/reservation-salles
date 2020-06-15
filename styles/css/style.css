@@ -7,88 +7,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 
-.content{
+.content {
     max-width: 1400px;
     margin: 0 auto;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-html, body{
+
+html,
+body {
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
-*{
+
+* {
     transition: ease 0.05s;
     box-sizing: border-box;
 }
 
 /*** HEADER ***/
-header h1, header h2, header h3, header h4, header h5, header h6,header ul, header li{
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6,
+header ul,
+header li {
     margin: 0;
 }
-header ul, header li {
+
+header ul,
+header li {
     list-style: none;
     padding: 0;
     height: 50px;
 }
-header{
+
+header {
     background-color: #c08d32;
     color:white;
     font-family: 'Lora';
 }
-header h1:hover, header a:hover{
+
+header h1:hover,
+header a:hover {
     background-color: #F5DA95;
     color: #1A1A1A;
 }
-.navbar{
+
+.navbar {
     max-width: 1400px;
     margin: 0 auto;
 }
-.navbar > ul{
+
+.navbar > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-.navbar ul li{
-    flex:1;
+
+.navbar ul li {
+    flex: 1;
 }
-.liste{
+
+.liste {
     position: relative;
 }
-.sous-liste{
+
+.sous-liste {
     opacity: 0;
     visibility: hidden;
     display: flex;
     flex-direction: column;
     position: absolute;
-    top:50px;
+    top: 50px;
     width: 100%;
     height: auto;
     background-color: #c08d32;
 }
-.liste:hover .sous-liste{
-    opacity:1;
+
+.liste:hover .sous-liste {
+    opacity: 1;
     visibility: visible;
 }
-header a, .header_autre{
+
+header a,
+.header_autre {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-header a:hover, .header_autre:hover{
+
+header a:hover,
+.header_autre:hover {
     transform: scale(1.05);
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*** FOOTER ***/
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    height: 300px;
+    background-color: #C08D32;
+    color: white;
+    padding: 5%;
+    font-family: 'Montserrat';
+}
+
+.RS ul li a {
+    font-size: 20px;
+}
+
+.RS ul li a:hover{
+    color: #333;
+    font-size:40px;
+}
+
+.RS ul li {
+    display: inline;
+
+}
+
+.footer i {
+    font-size: 30px;
+}
+
+.logo {
+    display: inline;
+}
+
+.logo h1 {
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+}
+
+.menu ul li {
+    display: inline;
+}
 
 
 /***RESPONSIVE HEADER + FOOTER***/
@@ -97,146 +166,147 @@ header a:hover, .header_autre:hover{
 
 /*** INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-.banniere{
-    background:url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
-    background-size:cover; 
-    color:white;
-    height:400px;
-    display:flex;
+.banniere {
+    background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
+    background-size: cover;
+    color: white;
+    height: 400px;
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    text-shadow:1px 1px 1px black;
-    padding:2%;
-    
+    text-shadow: 1px 1px 1px black;
+    padding: 2%;
 }
 
-.banniere h1{font-family: 'Courgette', cursive;}
-
-.banniere i {
-    font-size:50px;
-    margin-right:1%;
+.banniere h1 {
+    font-family: 'Courgette', cursive;
 }
 
-.column{
-    display:flex;
+.column {
+    display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
-    font-size:15px;
-    margin-top:5%;
-    margin-bottom:5%;
+    font-size: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.column h2{
-    text-align:center;
-    font-weight:200;
-    color:var(--gold);
+.column h2 {
+    text-align: center;
+    font-weight: 200;
+    color: var(--gold);
 }
 
-.ligne{
-    display:flex;
+.ligne {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.card{
-    border:0.1px solid var(--soft-gold);
+.card {
+    border: 0.1px solid var(--soft-gold);
     width: 30%;
     text-align: justify;
 }
 
-.image img{
-    width:100%;
+.image img {
+    width: 100%;
 }
 
-.card h3{
-    font-size:25px;
+.card h3 {
+    font-size: 25px;
     text-align: center;
-    font-weight:200;
-    color:var(--gold);
+    font-weight: 200;
+    color: var(--gold);
 }
 
-.card p{
-    font-size:15px;
-    font-weight:100;
+.card p {
+    font-size: 15px;
+    font-weight: 100;
 }
 
-.espace{
-    padding:5%;
+.espace {
+    padding: 5%;
 }
 
-.card a{
-    font-size:15px;
-    background-color:var(--gold);
-    border:0.1px solid var(--gold);
-    border-radius:50px;
-    color:white;
-    padding:2%;
-    width:40%;
+.card a {
+    font-size: 15px;
+    background-color: var(--gold);
+    border: 0.1px solid var(--gold);
+    border-radius: 50px;
+    color: white;
+    padding: 2%;
+    width: 40%;
     text-align: center;
 }
 
-.card a:hover{
-    background-color:white;
-    color:var(--gold);
-    transition:1s;
+.card a:hover {
+    background-color: white;
+    color: var(--gold);
+    transition: 1s;
 }
 
-.card a:active{
-    background-color:#F5DA95;
-    color:white;
-    transition:1s;
+.card a:active {
+    background-color: #F5DA95;
+    color: white;
+    transition: 1s;
 }
 
-.index-button{
+.index-button {
     display: flex;
-    justify-content:space-evenly;
-    
+    justify-content: space-evenly;
+
 }
 
 /*** RESPONSIVE INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-@media (max-width:900px){
-    
+@media (max-width:900px) {
+
     .banniere i {
-    font-size:40px;
-    margin-right:1%;
-}
-    
-    .ligne{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .card{
-        width:40%;
-        margin-bottom:5%;
-    }
-    
+        font-size: 40px;
+        margin-right: 1%;
     }
 
-@media (max-width:700px){
-    
-    .banniere i {
-    font-size:30px;
-    margin-right:1%;
-}
-    
-    .column h2 {display:none;}
-    
-    .banniere{
-        height:300px;
-    }
-    .ligne{
+    .ligne {
         display: flex;
         flex-wrap: wrap;
     }
-    .card{
-        width:70%;
-        margin-bottom:5%;
+
+    .card {
+        width: 40%;
+        margin-bottom: 5%;
     }
-    
+
+}
+
+@media (max-width:700px) {
+
+    .banniere i {
+        font-size: 30px;
+        margin-right: 1%;
     }
+
+    .column h2 {
+        display: none;
+    }
+
+    .banniere {
+        height: 300px;
+    }
+
+    .ligne {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 70%;
+        margin-bottom: 5%;
+    }
+
+}
 
 
 /****INSCRIPTION****/
@@ -265,85 +335,89 @@ header a:hover, .header_autre:hover{
     height: 100%;
 }
 
-.form-inscription{
-    display:flex;
-    flex-direction:column;
+.form-inscription {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.832);
-    color:white;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     padding:5%;
     margin: auto;
     min-width:35vw;
 }
 
-.form-inscription h1{
+.form-inscription h1 {
     display: flex;
     justify-content: center;
-    border-bottom:0.5px solid darkorange;
-    padding-bottom:3%;
+    border-bottom: 0.5px solid darkorange;
+    padding-bottom: 3%;
 }
 .form-inscription p{
     text-align: center;
 }
 .form-inscription p,
 .form-inscription p a,
-.form-inscription label{
-    font-size:18px;
+.form-inscription label {
+    font-size: 18px;
 }
 
-.form-inscription p a{text-decoration: underline;}
+.form-inscription p a {
+    text-decoration: underline;
+}
 
-.form-inscription p a:hover{color:darkorange;}
+.form-inscription p a:hover {
+    color: darkorange;
+}
 
 .form-inscription input[type="text"],
-.form-inscription input[type="password"]{
-    width:100%;
-    height:40px;
+.form-inscription input[type="password"] {
+    width: 100%;
+    height: 40px;
     font-family: 'Montserrat', sans-serif;
-    font-size:15px;
-    padding:1%;
-    border:none;
-    color:darkorange; 
+    font-size: 15px;
+    padding: 1%;
+    border: none;
+    color: darkorange;
 }
 
 .form-inscription input[type="text"]:hover,
-.form-inscription input[type="password"]:hover{
-    border:1px solid darkorange;
+.form-inscription input[type="password"]:hover {
+    border: 1px solid darkorange;
 }
 
-.form-inscription input[type="submit"]{
+.form-inscription input[type="submit"] {
     display: flex;
     justify-content: center;
-    color:white;
-    background-color:darkorange;
+    color: white;
+    background-color: darkorange;
     font-family: 'Montserrat', sans-serif;
-    width:60%;
-    height:40px;
-    padding:1%;
-    border-radius:50px;
-    border:none;
-    font-size:20px;
+    width: 60%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
     -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-    
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
 }
 
-.inscription-button{
+.inscription-button {
     display: flex;
     justify-content: center;
-    margin-top:2%;
-    margin-bottom:2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-.form-inscription input[type="submit"]:hover{
-    transition:1s;
-    background-color:#FFC146;
+.form-inscription input[type="submit"]:hover {
+    transition: 1s;
+    background-color: #FFC146;
     -webkit-transform: scale(1.1);
-	transform: scale(1.1);
+    transform: scale(1.1);
     box-shadow: 0 5px #CE8025;
-     
+
 }
 
 .form-inscription input[type="submit"]:active {
@@ -357,30 +431,35 @@ header a:hover, .header_autre:hover{
 /***RESPONSIVE INSCRIPTION***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-@media (max-width:1270px){
-    .form-inscription p,.form-inscription p a{
+@media (max-width:1270px) {
+
+    .form-inscription p,
+    .form-inscription p a {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
+
+}
+
+@media (max-width:900px) {
+    .form-inscription {
+        min-width: 300px;
     }
 
-@media (max-width:900px){
-    .form-inscription{
-        min-width:300px;
+    .form-inscription p,
+    .form-inscription p a,
+    .form-inscription label {
+        font-size: 15px;
     }
-    .form-inscription p,.form-inscription p a,.form-inscription label{
-        font-size:15px;
+
+    .form-inscription input[type="submit"] {
+        height: 30px;
     }
-    
-    .form-inscription input[type="submit"]{
-        height:30px;
-    }
-    
-    
-  }
+
+
+}
 
 
 /*** CONNEXION ***/
@@ -393,6 +472,115 @@ header a:hover, .header_autre:hover{
 
 /****PROFIL****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.body-profil span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+.main-profil {
+    background-image: url();
+    background-size: contain;
+    padding: 5%;
+}
+
+.contour-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form-profil {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5%;
+    width: 60%;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.form-profil h1 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.5px solid darkorange;
+    padding-bottom: 3%;
+}
+
+.form-profil p,
+.form-profil p a,
+.form-profil label {
+    font-size: 18px;
+}
+
+.form-profil p a {
+    text-decoration: underline;
+}
+
+.form-profil p a:hover {
+    color: darkorange;
+}
+
+.form-profil input[type="text"],
+.form-profil input[type="password"] {
+    width: 100%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 1%;
+    border: none;
+    color: darkorange;
+}
+
+.form-profil input[type="text"]:hover,
+.form-profil input[type="password"]:hover {
+    border: 1px solid darkorange;
+}
+
+.profil-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: darkorange;
+    font-family: 'Montserrat', sans-serif;
+    width: 60%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+
+.profil-button:hover {
+    transition: 1s;
+    background-color: #FFC146;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 5px #CE8025;
+
+}
+
+.profil-button:active {
+
+    box-shadow: 0 4px #CE8025;
+    transform: translateY(4px);
+}
+
+
 
 
 /****RESPONSIVE PROFIL****/
