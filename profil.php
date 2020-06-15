@@ -26,9 +26,9 @@
     /*LOGIN*/
 
     if (!empty($_POST['new_login']) and !empty($_POST['new_login_conf']) and isset($_POST['password_button'])) {
-        $new_login = $_POST['new_login'];
-        $new_login_conf = $_POST['new_login_conf'];
-        $login_required = preg_match("/^(?=.*[A-Za-z0-9]$)[A-Za-z\d\-\_]{3,19}$/", $new_login);
+        $new_login = htmlentities(trim($_POST['new_login']));
+        $new_login_conf = htmlentitites(trim($_POST['new_login_conf']));
+        $login_required = preg_match("/^(?=.*[A-Za-z0-9]$)[A-Za-z\d\-\_]{3,19}$/", $_POST['new_login']);
         if (!$login_required) {
             $errors[] = "Le login doit :<br>- Contenir entre 4 et 20 caractères.<br>- Commencer par une lettre<br>- Finir par une lettre ou nombre.<br>- Ne contenir aucun caractère spécial (sauf - et _).";
         }
@@ -40,6 +40,9 @@
         }
         if ($new_login != $new_login_conf) {
             $errors[] = "Les logins doivent être identiques.";
+        }
+        if ($new_login = $login) {
+            $errors[] = "Le login n'a pas été modifié !";
         }
         if (empty($errors)) {
             $request_new_login = "UPDATE `reservationsalles`.`utilisateurs` SET login = '" . $new_login . "';";
@@ -53,9 +56,9 @@
     /*MOT DE PASSE*/
 
     if (!empty($_POST['old_pass']) and !empty($_POST['new_pass']) and !empty($_POST['new_pass_conf']) and isset($_POST['password_button'])) {
-        $old_pass = $_POST['old_pass'];
-        $new_pass = $_POST['new_pass'];
-        $new_pass_conf = $_POST['new_pass_conf'];
+        $old_pass = htmlentities(trim($_POST['old_pass']));
+        $new_pass = htmlentities(trim($_POST['new_pass']));
+        $new_pass_conf = htmlentities(trim($_POST['new_pass_conf']));
         if (!password_verify($old_pass, $user_info['password'])) {
             $errors[] = "Votre ancien mot de passe est incorrect.";
         } elseif (password_verify($new_pass, $user_info['password'])) {
@@ -64,7 +67,7 @@
         if ($new_pass != $new_pass_conf) {
             $errors[] = "Les mots de passe ne sont pas identiques.";
         }
-        $password_required = preg_match("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $new_pass);
+        $password_required = preg_match("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $_POST['new_pass']);
         if (!$password_required) {
             $errors[] = "Le mot de passe doit :<br>- Contenir entre 8 et 20 caractères.<br>- Contenir au moins 1 caractère spécial, 1 nombre, 1 majuscule et 1 minuscule.";
         }
@@ -83,6 +86,7 @@
 <main>
     <div class="content">
         <?= renderErrors($errors) ?>
+        <p>Bonjour <?= $login ?></p>
         <form class="" action="profil.php" method="post">
             <h2>Modifier pseudo</h2>
             <div class="form_element">

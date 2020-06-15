@@ -35,13 +35,13 @@ $page_selected = "index";
             <?php
     
             if(isset($_SESSION['user'])){
-                $user = $_SESSION['user'];
+                $user = $_SESSION['user']['login'];
             echo"
                 
                 
                 
                 <section class='column'>
-                    <h2> Bonjour Machin, sélectionnez la salle idéale pour votre événement </h2><br>
+                    <h2> Bonjour $user, sélectionnez la salle idéale pour votre événement </h2><br>
                     <section class='ligne'>
                         <div class='card'>
                             <div class='image'>
