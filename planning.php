@@ -154,8 +154,8 @@ $page_selected = "planning";
                     foreach ($is_creneaux_av as $key => $value){
                         if ($value == null) {
                             include 'form_multiples_creneaux.php';
-                            break;
                             $tester = 1;
+                            break;
                         }
                     }
                     if (!isset($tester)){
