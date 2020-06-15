@@ -236,7 +236,10 @@ $page_selected = "planning";
                                 <td>
                                     <?= $_SESSION['user']['login']; ?>
                                     <br>
-                                    <?= $events['titre']; ?></td>
+                                    <a href="reservation.php?id=<?= $events['id'] ?>">
+                                    <?= $events['titre']; ?>
+                                    </a>
+                                </td>
                                 <?php
                             endif; ?>
                             <?php
