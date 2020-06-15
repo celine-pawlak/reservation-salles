@@ -13,6 +13,7 @@ $page_selected = "connexion";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Connexion</title>
 </head>
 <body>
@@ -78,7 +79,6 @@ $page_selected = "connexion";
                     </div>
                     <div class="form-group w-70 align-items-center">
                         <button class="btn btn-md mb-05" type="submit" name="signin">Se connecter</button>
-                        <a class="delta-green" href="inscription.php">S'inscrire</a>
                     </div>
                 </form>
             </div>

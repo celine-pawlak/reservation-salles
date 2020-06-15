@@ -9,8 +9,9 @@
 <!--    <link rel="stylesheet" href="styles/css/main.css">-->
     <link rel="stylesheet" type="text/css" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
-<body>
+<body body-profil>
 <header>
     <?php
     include 'header.php';
@@ -83,37 +84,37 @@
 
     ?>
 </header>
-<main>
-    <div class="content">
+<main class="main-profil">
+    <div class="content contour-profil">
         <?= renderErrors($errors) ?>
         <p>Bonjour <?= $login ?></p>
-        <form class="" action="profil.php" method="post">
-            <h2>Modifier pseudo</h2>
+        <form class="form-profil" action="profil.php" method="post">
+            <h2>Modifier pseudo</h2><br>
             <div class="form_element">
                 <label for="new_login">Nouveau pseudo</label>
-                <input type="text" name="new_login" value="" required placeholder="Nouveau pseudo">
+                <input type="text" name="new_login" value="" required placeholder="Nouveau pseudo"><br><br>
             </div>
             <div class="form_element">
                 <label for="new_login_conf">Confirmation pseudo</label>
-                <input type="text" name="new_login_conf" value="" required placeholder="Confirmer pseudo">
+                <input type="text" name="new_login_conf" value="" required placeholder="Confirmer pseudo"><br><br>
             </div>
-            <button type="submit" name="login_button">Modifier</button>
+            <button type="submit" name="login_button" class="profil-button">Modifier</button>
         </form>
-        <form class="" action="profil.php" method="post">
-            <h2>Modifier mot de passe</h2>
+        <form class="form-profil" action="profil.php" method="post">
+            <h2>Modifier mot de passe</h2><br>
             <div class="form_element">
                 <label for="old_pass">Ancien mot de passe</label>
-                <input type="password" name="old_pass" value="" required placeholder="Ancien mdp">
+                <input type="password" name="old_pass" value="" required placeholder="Ancien mdp"><br><br>
             </div>
             <div class="form_element">
                 <label for="new_pass">Nouveau mot de passe</label>
                 <input type="password" name="new_pass" value="" required placeholder="Nouveau mdp">
-            </div>
+            </div><br><br>
             <div class="form_element">
                 <label for="new_pass_conf">Confirmation nouveau mot de passe</label>
                 <input type="password" name="new_pass_conf" value="" required placeholder="Confirmer nouveau mdp">
-            </div>
-            <button type="submit" name="password_button">Modifier</button>
+            </div><br><br>
+            <button type="submit" name="password_button" class="profil-button">Modifier</button>
         </form>
     </div>
 </main>
