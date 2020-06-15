@@ -6,15 +6,12 @@ $db = mysqli_connect("localhost", "root", "", "reservationsalles");
 
 /*REDIRECTIONS SELON SESSION*/
 
-if ($page_selected == "profil" and !$_SESSION['user']) {
+if (in_array($page_selected, ['profil', 'user_reservation', 'reservation', 'form_multiples_creneaux', 'planning']) and !$_SESSION['user']) {
     header('location: connexion.php');
 }
 if (in_array($page_selected, ['connexion', 'inscription']) and isset($_SESSION['user'])) {
     header('location: index.php');
 }
-// if ($page_selected == "planning" and !$_SESSION['user']) {
-//     header('location: connexion.php');
-// }
 
 /*FONCTIONS*/
 
@@ -56,12 +53,12 @@ include 'functions/slot_generator.php';
     <div class="navbar z-10">
         <ul class="d-flex align-items-center ml-1">
             <?php if (!isset($_SESSION['user'])) : ?>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
+                <li><a href="index.php"><h1>Accueil</h1></a></li>
+                <li><a href="connexion.php"><h1>Connexion</h1></a></li>
+                <li><a href="inscription.php"><h1>Inscription</h1></a></li>
             <?php else : ?>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="planning.php">Planning</a></li>
+                <li><a href="index.php"><h1>Accueil</h1></a></li>
+                <li><a href="planning.php"><h1>Planning</h1></a></li>
                 <li class="liste">
                     <h1>Mon compte</h1>
                     <ul class="sous-liste">
