@@ -6,7 +6,7 @@
     <title>Profil - Réservation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-    <link rel="stylesheet" href="styles/css/main.css">
+<!--    <link rel="stylesheet" href="styles/css/main.css">-->
     <link rel="stylesheet" type="text/css" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
