@@ -19,6 +19,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+
 }
 
 a {
@@ -122,11 +123,16 @@ header a:hover,
     flex-direction: row;
     align-items: baseline;
     justify-content: space-around;
-    height: 100px;
+    height: 200px;
     background-color: #C08D32;
     color: white;
     padding: 5%;
     font-family: 'Montserrat';
+}
+
+.after:after{
+    content:"・";
+    color:white;
 }
 
 .menu ul li {
@@ -444,7 +450,6 @@ header a:hover,
         align-items: center;
         text-align: center;
     }
-
 }
 
 @media (max-width:900px) {
