@@ -1,6 +1,10 @@
 <?php
 
-function heure_recup($heure)
+/**
+ * @param $heure
+ * @return string
+ */
+function heure_recup($heure): string
 {
     for ($i = 0; $i < 2; $i++) {
         $heure_table[] = "$heure[$i]";
