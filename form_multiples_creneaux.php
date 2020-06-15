@@ -1,4 +1,6 @@
 <?php
+
+$page_selected = "form_multiples_creneaux";
 $h1 = $h_to_int_debut;
 $h2 = $h_to_int_debut + 1;
 ?>

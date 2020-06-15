@@ -14,10 +14,10 @@
     /*COLORS SHEME*/
     --dark: #1A1A1A;
     --light: #EBEBEB;
-    --sand: #D8D3D0;
-    --alpine-blue: #DAE4E5;
-    --chuff-blue: #94C0C2;
-    --cadet-blue: #69A4A2;
+    --gold: #c08d32;
+    --soft-gold: #F5DA95;
+    --dark-gold: #CE8025;
+    --dark-blue: #073B73;
     --magnetic-green: #296E6B;
     --delta-green: #2B4A4A;
     /*OVERLAY COLOR SCHEME*/
@@ -212,11 +212,11 @@ textarea:focus {
 }
 
 a:hover {
-    color: var(--magnetic-green);
+    color: var(--dark-blue);
 }
 
 a:active {
-    color: var(--delta-green);
+    color: var(--dark-blue);
 }
 
 p,

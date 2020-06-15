@@ -50,8 +50,8 @@ $page_selected = "planning";
     /*CONDITIONS INPUT*/
 
     if (!empty($_POST['titre']) and !empty($_POST['description']) and !empty($_POST['date']) and !empty($_POST['heure_debut'])) {
-        $titre = $_POST['titre'];
-        $description = $_POST['description'];
+        $titre = htmlentities(trim($_POST['titre']));
+        $description = htmlentities(trim($_POST['description']));
         $date = $_POST['date'];
         $heure_debut = $_POST['heure_debut'];
         $heure_fin = $_POST['heure_fin'];
@@ -67,7 +67,7 @@ $page_selected = "planning";
         }
 
         /*DESCRIPTION*/
-        $description_required = preg_match("/^^[A-Za-z]{1,}.{0,29}$/", $description);
+        $description_required = preg_match("/^[A-Za-z]{1,}.{0,29}$/", $description);
         if (!$description_required) {
             $errors[] = "Votre description doit: <br>- Commencer par une lettre.<br>- Contenir 30 caractères maximum.";
         }
@@ -120,7 +120,7 @@ $page_selected = "planning";
         /*VERIFICATION EXISTANTS*/
 
         if (empty($errors)) {
-            include 'hour_to_integer.php';
+            include 'functions/hour_to_integer.php';
             $h_to_int_debut = heure_recup($heure_debut);
             $h_to_int_fin = heure_recup($heure_fin);
 
@@ -154,8 +154,8 @@ $page_selected = "planning";
                     foreach ($is_creneaux_av as $key => $value) {
                         if ($value == null) {
                             include 'form_multiples_creneaux.php';
-                            break;
                             $tester = 1;
+                            break;
                         }
                     }
                     if (!isset($tester)) {
