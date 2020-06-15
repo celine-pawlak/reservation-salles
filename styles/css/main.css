@@ -212,11 +212,11 @@ textarea:focus {
 }
 
 a:hover {
-    color: var(--dark-blue);
+    color: var(--dark-gold);
 }
 
 a:active {
-    color: var(--dark-blue);
+    color: var(--dark-gold);
 }
 
 p,

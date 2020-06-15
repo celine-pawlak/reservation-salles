@@ -49,9 +49,8 @@ include 'functions/slot_generator.php';
 
 ?>
 
-<nav class="col-no-wrap">
-    <div class="navbar z-10">
-        <ul class="d-flex align-items-center ml-1">
+<nav class="navbar">
+        <ul>
             <?php if (!isset($_SESSION['user'])) : ?>
                 <li><a href="index.php"><h1>Accueil</h1></a></li>
                 <li><a href="connexion.php"><h1>Connexion</h1></a></li>
@@ -60,9 +59,9 @@ include 'functions/slot_generator.php';
                 <li><a href="index.php"><h1>Accueil</h1></a></li>
                 <li><a href="planning.php"><h1>Planning</h1></a></li>
                 <li class="liste">
-                    <h1>Mon compte</h1>
+                    <h1 class="header_autre">Mon compte</h1>
                     <ul class="sous-liste">
-                        <li><a href="profil.php">Modifier mes identifiants</a></li>
+                        <li><a href="profil.php"><p>Modifier mes identifiants</p></a></li>
                         <li><a href="user_reservation.php">Modifier mes réservations</a></li>
                         <li><a href="delete_session.php">Déconnexion</a></li>
                     </ul>
@@ -70,5 +69,4 @@ include 'functions/slot_generator.php';
 
             <?php endif; ?>
         </ul>
-    </div>
 </nav>
