@@ -122,20 +122,24 @@ header a:hover,
     flex-direction: row;
     align-items: baseline;
     justify-content: space-around;
-    height: 300px;
+    height: 100px;
     background-color: #C08D32;
     color: white;
     padding: 5%;
     font-family: 'Montserrat';
 }
 
-.RS ul li a {
+.menu ul li {
+    display: inline;
     font-size: 20px;
 }
 
-.RS ul li a:hover{
+.RS ul li a {
+    font-size: 40px;
+}
+
+.RS ul li a:hover,.menu ul li:hover{
     color: #333;
-    font-size:40px;
 }
 
 .RS ul li {
@@ -156,9 +160,7 @@ header a:hover,
     font-size: 30px;
 }
 
-.menu ul li {
-    display: inline;
-}
+
 
 
 /***RESPONSIVE HEADER + FOOTER***/
