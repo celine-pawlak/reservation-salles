@@ -1,132 +1,53 @@
 <?php $page_selected = "reservation"; ?>
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" dir="ltr">
 <head>
-    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-    <link rel="stylesheet" href="fa.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <link rel="stylesheet" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Réservation</title>
 </head>
 <body>
-<header>
-    <?php include("header.php");
-    $errors = []; 
-
-    $servname="localhost";
-    $dbname="reservationsalles";
-    $user="root";
-    
-    try{
-        $dbco=new PDO("mysql:host=$servname;dbname=$dbname",$user);
-        
-        $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        $sth = $dbco -> prepare("SELECT utilisateurs.login, reservations.titre, reservations.description, reservations.debut, reservations.fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur");
-        
-        $sth -> execute();
-        
-        $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
-            
-        
-    }
-    
-    catch(PDOException $e){
-                echo "Erreur : " . $e->getMessage();
-            }
-        
+    <header>
+        <?php include("header.php");
+        $errors = [];
+        $id_reservation = $_GET['id'];
+        $request = "SELECT id, titre, description, cast(debut as time), cast(fin as time), cast(debut as date),id_utilisateur FROM reservations WHERE id = '$id_reservation'";
+        $query = mysqli_query($db, $request);
+        $reservation = mysqli_fetch_array($query);
+        if (empty($reservation)) {
+            $errors[] = "Cette réservation n'existe pas !";
+        }
+        else {
+            $reservation['heure_debut'] = $reservation['cast(debut as time)'];
+            $reservation['heure_fin'] = $reservation['cast(fin as time)'];
+            $reservation['date'] = $reservation['cast(debut as date)'];
+            $user_id = $reservation['id_utilisateur'];
+            $request2 = "SELECT login FROM utilisateurs WHERE id = '$user_id'";
+            $query2 = mysqli_query($db, $request2);
+            $user_login = mysqli_fetch_array($query2);
+        }
         ?>
-    <table>
-        <thead>
-            <tr>
-                <th>Nom du créateur</th>
-                <th>Titre de l'événement</th>
-                <th>Description</th>
-                <th>Heure de début</th>
-                <th>Heure de fin</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($resultat as $info => $value){?>
-            <tr>
-                <td><?= $value['login'] ?></td>
-                <td><?= $value['titre'] ?></td>
-                <td><?= $value['description'] ?></td>
-                <td><?= $value['debut'] ?></td>
-                <td><?= $value['fin'] ?></td>
-            </tr>
-        </tbody>
-    </table>
-        <?php  
-    }
-            
-    ?>
+    </header>
+    <main>
+        <?php
+        echo renderErrors($errors);
+        if(empty($errors)) { ?>
+        <div class="content">
+            <h2><?=$reservation['titre']?></h2>
+            <p>Le <?=$reservation['date']?> de <?=$reservation['heure_debut']?> à <?=$reservation['heure_fin']?></p>
+            <h3>Description</h3>
+            <p><?=$reservation['description']?></p>
+            <p>Réservé par <?=$user_login[0]?></p>
+        </div>
+        <?php } ?>
+    </main>
+    <footer>
 
-        
-        
-
-</header>
-<main>
-    <div class="content">
-        <?= renderErrors($errors) ?>
-    </div>
-
-</main>
-<footer>
-    <?php include("footer.php") ?>
-</footer>
+    </footer>
 </body>
 </html>
-
-<!--
-    $user =  $_SESSION['user']['login'];
-
-    
-    if(isset($_SESSION['$user'])){
-
-        
-        //CONNEXION BDD
-        $db = mysqli_connect('localhost','root','','reservationsalles');
-
-        //CREATION REQUETE
-        $requete = "SELECT utilisateurs.login, reservations.titre FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur";
-        
-        //EXECUTION REQUETE
-        $query = mysqli_query($db,$requete);
-        
-        //RECUPERATION DONNEES
-        $fusion = mysqli_fetch_all($query); 
-        
-    }
--->
-
-
-<!--
-
-    $servname="localhost";
-    $dbname="reservationsalles";
-    $user="root";
-    
-    try{
-        $dbco=new PDO("mysql:host=$servname;dbname=$dbname",$user);
-        
-        $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        $sth = $dbco->prepare("SELECT utilisateurs.login, reservations.titre, reservations.description, reservations.debut, reservations.fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur");
-        
-        $sth -> execute();
-        
-        $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
-        
-        print_r($resultat);    
-    }
-    
-    catch(PDOException $e){
-                echo "Erreur : " . $e->getMessage();
-            }
-
--->
