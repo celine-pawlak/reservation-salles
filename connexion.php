@@ -13,10 +13,12 @@ $page_selected = "connexion";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <title>Connexion</title>
 </head>
-<body>
+<body class="body-inscription">
 <header>
     <?php
     include("header.php");
@@ -64,16 +66,16 @@ $page_selected = "connexion";
     <div class="content">
         <?= renderErrors($errors) ?>
         <form class="form-inscription" action="connexion.php" method="POST">
-            <h1>Connexion</h1>
+            <h1> CONNEXION </h1>
 
             <label for="login">Identifiant</label>
-            <input class="no-border" id="login" name="login" type="text" required>
-
+            <input class="no-border" id="login" name="login" type="text" placeholder="Insérez votre login" required>
+            <br>
             <label for="password">Mot de Passe</label>
-            <input class="no-border" id="password" name="password" type="password" required>
-
+            <input class="no-border" id="password" name="password" type="password" placeholder="Insérez votre mot de passe" required>
+            <br>
             <input class="inscription-button" type="submit" name="signin" value="Se connecter">
-            <p>Vous n'êtes pas inscris ? <a href="inscription.php">Inscrivez-vous</a></p>
+            <p>Vous n'êtes pas inscris ?<br><a href="inscription.php">Inscrivez-vous</a></p>
         </form>
     </div>
 </main>
