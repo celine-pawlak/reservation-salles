@@ -40,35 +40,13 @@ a {
 
 /****TRONC COMMUN****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.body-profil span, 
+ 
 .body-user_reservation span,
 .body-inscription span,
 .body-profil span{
     font-style: italic;
     color: darkorange;
     font-size: 15px;
-}
-
-.body-user_reservation span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-}
-
-
-.body-inscription span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-}
-
-
-.body-profil span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-    
 }
 
 
@@ -276,14 +254,11 @@ header a:hover,
         flex-direction: column;
         align-items: center;
     }
-
-
 }
-
-
 
 /*** INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 .banniere {
     background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
     background-size: cover;
@@ -468,12 +443,6 @@ header a:hover,
     height: 100vh;
 }
 
-.body-inscription span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-}
-
 .main_connexion {
     background-image: url(../../ressources/dark-1845065_1920.jpg);
     background-size: cover;
@@ -635,13 +604,6 @@ header a:hover,
 /****PROFIL****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.body-profil span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-    
-}
-
 .main-profil {
     background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
     background-size:contain;
@@ -657,7 +619,6 @@ header a:hover,
     font-family: 'Courgette', cursive;
     text-shadow:1px 1px 3px black;
     -webkit-text-stroke: 1px #9c917c;
-
 }
 
 .contour-profil {
@@ -752,13 +713,6 @@ header a:hover,
 
 /****USER RESERVATION (modification)****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-.body-user_reservation span {
-    font-style: italic;
-    color: darkorange;
-    font-size: 15px;
-}
 
 .main-user_reservation {
     background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
@@ -896,13 +850,6 @@ header a:hover,
 
 /****USER RESERVATION (modification) RESPONSIVE****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-@media (max-width:900px) {
-
-
-
-}
 
 @media (max-width:700px) {
 
@@ -1051,6 +998,11 @@ table {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+.form_element{
+    display:flex;
+    flex-direction: column;
+}
+
 .reservation-form{
     display: flex;
     flex-direction: column;
@@ -1059,8 +1011,6 @@ table {
     width:80%;
     margin-top:5%;
 }
-
-
 
 .form-reservation-input label{
     font-family: 'Montserrat', sans-serif;
@@ -1076,10 +1026,20 @@ table {
     outline-color:#C08D32;
     font-family: 'Montserrat', sans-serif;
     padding:1%;
+    font-weight:bold;
+}
+
+.form-reservation-input input[type="date"]{
+    width:40%;
+}
+
+.ligne-form-resa{
+    display:flex;
+    justify-content: space-around;
 }
 
 
-.form-reservation-input button{
+.form-reservation_button{
     border-radius:10px;
     height:40px;
     border:0.1px solid lightgray;
@@ -1090,16 +1050,17 @@ table {
     color:white;
     font-weight:100;
     outline:none;
+    align-self: center;
 }
 
-.form-reservation-input button:hover{
+.form-reservation_button:hover{
     color:#333;
     background-color:lightgray;
     border:1px solid gray;
     transition :1s;
 }
 
-.form-reservation-input button:active{
+.form-reservation_button:active{
     color:white;
     background-color:grey;
     border:1px solid #333;
