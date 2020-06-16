@@ -1,6 +1,6 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*ALL*/
-:root{
+:root {
     --dark: #1A1A1A;
     --light: #EBEBEB;
     --gold: #c08d32;
@@ -38,18 +38,22 @@ a {
     box-sizing: border-box;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /****TRONC COMMUN****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .body-user_reservation span,
 .body-inscription span,
-.body-profil span{
+.body-profil span {
     font-style: italic;
     color: #af6408;
     font-size: 15px;
 }
-
-
 
 
 /*** HEADER ***/
@@ -77,8 +81,8 @@ header {
     background-color: #c08d32;
     color: white;
     font-family: 'Lora';
-    border-bottom:0.5px solid white;
-    z-index:4;
+    border-bottom: 0.5px solid white;
+    z-index: 4;
 }
 
 header h1:hover,
@@ -90,7 +94,7 @@ header a:hover {
 .navbar {
     max-width: 1400px;
     margin: 0 auto;
-    border-bottom:0.5px solid white;
+    border-bottom: 0.5px solid white;
 }
 
 .navbar > ul {
@@ -118,7 +122,7 @@ header a:hover {
     width: 100%;
     height: auto;
     background-color: #c08d32;
-    border-bottom:0.5px solid white;
+    border-bottom: 0.5px solid white;
 }
 
 .liste:hover .sous-liste {
@@ -139,30 +143,34 @@ header a:hover,
 .header_autre:hover {
     transform: scale(1.05);
 }
-.fa-bars{
-    z-index:3;
+
+.fa-bars {
+    z-index: 3;
     right: -70%;
     top: 30%;
 }
-.liste2{
+
+.liste2 {
     opacity: 0;
     visibility: hidden;
     position: absolute;
     display: flex;
 }
-.sous-liste2{
+
+.sous-liste2 {
     opacity: 0;
     visibility: hidden;
-    position:absolute;
+    position: absolute;
     background-color: #c08d32;
-    height:auto;
+    height: auto;
     width: 100vw;
-    z-index:2;
+    z-index: 2;
     padding-top: 50px;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
 }
-.liste2:hover .sous-liste2{
+
+.liste2:hover .sous-liste2 {
     opacity: 1;
     visibility: visible;
 }
@@ -173,19 +181,21 @@ header a:hover,
 /*@media (min-width: 501px){
 
 }*/
-@media (max-width: 500px){
-    .liste2{
+@media (max-width: 500px) {
+    .liste2 {
         opacity: 1;
         visibility: visible;
-        position:relative;
+        position: relative;
     }
-    .resp_head{
+
+    .resp_head {
         opacity: 0;
         visibility: hidden;
         position: absolute;
-        z-index:3;
+        z-index: 3;
     }
-    .sous-liste2 *{
+
+    .sous-liste2 * {
         font-size: 18px;
     }
 }
@@ -203,7 +213,8 @@ header a:hover,
     padding: 5%;
     font-family: 'Montserrat';
 }
-.footer ul, .footer li{
+
+.footer ul, .footer li {
     padding: 0;
 }
 
@@ -245,12 +256,10 @@ header a:hover,
 }
 
 
-
-
 /***RESPONSIVE HEADER + FOOTER***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
     .footer {
         display: flex;
@@ -276,7 +285,7 @@ header a:hover,
 
 .banniere h2 {
     font-family: 'Courgette', cursive;
-    font-size:40px;
+    font-size: 40px;
 }
 
 .column {
@@ -359,7 +368,7 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
 
     .banniere i {
         font-size: 40px;
@@ -378,7 +387,7 @@ header a:hover,
 
 }
 
-@media (max-width:700px) {
+@media (max-width: 700px) {
 
     .banniere i {
         font-size: 30px;
@@ -404,41 +413,48 @@ header a:hover,
     }
 
 }
-@media (min-width: 630px){
-    .form-profil{
-        width:600px;
+
+@media (min-width: 630px) {
+    .form-profil {
+        width: 600px;
     }
+
     .form-profil p,
     .form-profil p a,
     .form-profil label {
         font-size: 18px;
     }
-    .profil-button{
+
+    .profil-button {
         font-size: 20px;
     }
-    .main-profil p{
-        font-size:30px;
+
+    .main-profil p {
+        font-size: 30px;
     }
 }
-@media (max-width: 630px){
-    .form-profil{
-        width:90%;
+
+@media (max-width: 630px) {
+    .form-profil {
+        width: 90%;
     }
-    .form-profil h2{
+
+    .form-profil h2 {
         font-size: 1em;
     }
-    .form-profil label{
+
+    .form-profil label {
         font-size: 14px;
     }
-    .profil-button{
+
+    .profil-button {
         font-size: 16px;
     }
-    .main-profil p{
+
+    .main-profil p {
         font-size: 20px;
     }
 }
-
-
 
 
 /****INSCRIPTION****/
@@ -450,7 +466,7 @@ header a:hover,
 .main_connexion {
     background-image: url(../../ressources/dark-1845065_1920.jpg);
     background-size: cover;
-    background-position: fixed;
+    /*background-position: fixed;*/
 }
 
 .main-inscription {
@@ -518,10 +534,12 @@ header a:hover,
 .form-inscription input[type="password"]:hover {
     border: 1px solid darkorange;
 }
-.form-inscription input[type="submit"]{
+
+.form-inscription input[type="submit"] {
     width: 60%;
 }
-.form-inscription input[type="submit"]{
+
+.form-inscription input[type="submit"] {
     display: flex;
     justify-content: center;
     color: white;
@@ -539,14 +557,14 @@ header a:hover,
 
 }
 
-.inscription-button{
+.inscription-button {
     display: flex;
     justify-content: center;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.form-inscription input[type="submit"]:hover{
+.form-inscription input[type="submit"]:hover {
     transition: 1s;
     background-color: #FFC146;
     -webkit-transform: scale(1.1);
@@ -555,18 +573,16 @@ header a:hover,
 
 }
 
-.form-inscription input[type="submit"]:active{
+.form-inscription input[type="submit"]:active {
     box-shadow: 0 4px #CE8025;
     transform: translateY(4px);
 }
 
 
-
-
 /***RESPONSIVE INSCRIPTION***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-@media (max-width:1270px) {
+@media (max-width: 1270px) {
 
     .form-inscription p,
     .form-inscription p a {
@@ -577,7 +593,7 @@ header a:hover,
     }
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
     .form-inscription {
         min-width: 300px;
     }
@@ -604,25 +620,23 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-
-
 /****PROFIL****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .main-profil {
-    background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
-    background-size:contain;
+    background: url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
+    background-size: contain;
     padding: 2rem 0;
 }
 
-.main-profil h2{
+.main-profil h2 {
     text-align: center;
 }
 
-.main-profil p{
-    color:var(--soft-gold);
+.main-profil p {
+    color: var(--soft-gold);
     font-family: 'Courgette', cursive;
-    text-shadow:1px 1px 3px black;
+    text-shadow: 1px 1px 3px black;
     -webkit-text-stroke: 1px #9c917c;
 }
 
@@ -659,9 +673,9 @@ header a:hover,
     font-size: 15px;
     padding: 1%;
     border: none;
-    color:  #9c917c;
-    border-radius:10px;
-    outline:none;
+    color: #9c917c;
+    border-radius: 10px;
+    outline: none;
     font-weight: bold;
 }
 
@@ -708,35 +722,32 @@ header a:hover,
 }
 
 
-
-
 /****RESPONSIVE PROFIL****/
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
 
 
 /****USER RESERVATION (modification)****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .main-user_reservation {
-    background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
-    background-size:contain;
+    background: url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
+    background-size: contain;
     padding: 5%;
 }
 
 
-.main-user_reservation{
-    color:black;
-    font-size:30px;
-    font-weight:bold;
+.main-user_reservation {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
 
 }
 
-.main-user_reservation h2{
+.main-user_reservation h2 {
 }
 
-.main-user_reservation p{
+.main-user_reservation p {
     font-family: Montserrat;
 }
 
@@ -748,7 +759,7 @@ header a:hover,
     margin-bottom: 5%;
 }
 
-.form-user_reservation{
+.form-user_reservation {
     display: flex;
     flex-direction: column;
     background-color: #9c917c;
@@ -782,9 +793,9 @@ header a:hover,
     font-size: 15px;
     padding: 1%;
     border: none;
-    color:  #9c917c;
-    border-radius:10px;
-    outline:none;
+    color: #9c917c;
+    border-radius: 10px;
+    outline: none;
     font-weight: bold;
 }
 
@@ -794,7 +805,7 @@ header a:hover,
 
 }
 
-.user_reservation-boutons{
+.user_reservation-boutons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -838,78 +849,88 @@ header a:hover,
     transform: translateY(4px);
 }
 
-.user_reservation-delete{
-    border-radius:50%;
-    background-color:#FFC146;
-    border:none;
-    height:40px;
-    width:7%;
-    align-items:  center;
+.user_reservation-delete {
+    border-radius: 50%;
+    background-color: #FFC146;
+    border: none;
+    height: 40px;
+    width: 7%;
+    align-items: center;
 }
 
-.user_reservation-delete:hover{
-    background-color:#E94C16;
-    transition:1s;
+.user_reservation-delete:hover {
+    background-color: #E94C16;
+    transition: 1s;
 }
 
 
 /****USER RESERVATION (modification) RESPONSIVE****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-@media (max-width:700px) {
+@media (max-width: 700px) {
 
 
 }
 
 
-@media (min-width: 630px){
-    .form-user_reservation{
-        width:600px;
+@media (min-width: 630px) {
+    .form-user_reservation {
+        width: 600px;
     }
+
     .form-user_reservation p,
     .form-user_reservation p a,
     .form-user_reservation label {
         font-size: 18px;
     }
-    .user_reservation-button{
+
+    .user_reservation-button {
         font-size: 20px;
     }
-    .main-user_reservation p{
-        font-size:30px;
+
+    .main-user_reservation p {
+        font-size: 30px;
 
     }
 }
 
 
-@media (max-width: 630px){
-    .form-user_reservation{
-        width:90%;
+@media (max-width: 630px) {
+    .form-user_reservation {
+        width: 90%;
     }
-    .form-user_reservationl h2{
+
+    .form-user_reservationl h2 {
         font-size: 1em;
     }
-    .form-user_reservation label{
+
+    .form-user_reservation label {
         font-size: 14px;
     }
-    .main-user_reservation p{
+
+    .main-user_reservation p {
         font-size: 20px;
     }
-    .contour-user_reservation p{
+
+    .contour-user_reservation p {
         font-size: 16px;
         text-align: center;
     }
 }
-@media (max-width: 501px){
-    .user_reservation-delete{
-        min-width:70%;
+
+@media (max-width: 501px) {
+    .user_reservation-delete {
+        min-width: 70%;
         border-radius: 50px;
     }
-    .user_reservation-button{
+
+    .user_reservation-button {
         font-size: 16px;
         min-width: 100%;
     }
 
 }
+
 @media (max-width: 500px) {
     .user_reservation-boutons {
         flex-direction: column;
@@ -919,9 +940,8 @@ header a:hover,
 }
 
 
-
 /****PLANNING****/
-.reserve_box{
+.reserve_box {
     max-width: 1000px;
     margin: 1rem auto;
     display: flex;
@@ -929,7 +949,8 @@ header a:hover,
     align-items: center;
     justify-content: center;
 }
-.form_multiples_creneaux{
+
+.form_multiples_creneaux {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -947,6 +968,7 @@ header a:hover,
     -ms-user-select: none;
     user-select: none;
 }
+
 .container input {
     position: absolute;
     opacity: 0;
@@ -954,6 +976,7 @@ header a:hover,
     height: 0;
     width: 0;
 }
+
 .checkmark {
     position: absolute;
     top: 0;
@@ -962,20 +985,25 @@ header a:hover,
     width: 25px;
     background-color: #eee;
 }
+
 .container:hover input ~ .checkmark {
     background-color: #ccc;
 }
+
 .container input:checked ~ .checkmark {
-    background-color:#333333;
+    background-color: #333333;
 }
+
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
+
 .container input:checked ~ .checkmark:after {
     display: block;
 }
+
 .container .checkmark:after {
     left: 9px;
     top: 5px;
@@ -988,19 +1016,17 @@ header a:hover,
     transform: rotate(45deg);
 }
 
-.planning-form{
-    background:url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
-    background-size:contain;
+.planning-form {
+    background: url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
+    background-size: contain;
 }
 
-.reservation-form{
-    background-color:#333;
-    color:white;
-    border-top-right-radius:5px;
-    border-top-left-radius:5px;
+.reservation-form {
+    background-color: #333;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
-
-.reservation-form h2, p{font-family: 'Montserrat', sans-serif;}
 
 .week-container-group {
     display: flex;
@@ -1008,15 +1034,11 @@ header a:hover,
     margin-bottom: 5%;
 
 }
-.week-calendar{
-    width:80%;
-    padding:1%;
-}
 
 .week-container-group table {
-   background-color:white;
+    background-color: white;
     border-bottom-left-radius: 5px;
-     border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 
@@ -1031,46 +1053,62 @@ table {
 
 
 .week-calendar th,
-td{
-    border-radius:5px;
+td {
+    border-radius: 5px;
 }
 
 .week-calendar th {
     background-color: #333;
     color: white;
-    height: 20px;
-    padding: 1%;
 }
 
-.week-calendar td{
-    font-size:15px;
-    font-weight:200;
+.week-calendar td {
+    font-size: 15px;
+    text-align: center;
+    font-weight: 200;
 }
 
-.week-calendar .heure-titre{
-    color:white;
-    background-color:#C08D32;
+.week-calendar .heure-titre {
+    color: white;
+    background-color: #C08D32;
 }
 
 .week-calendar .heure {
-    background-color:#C08D32;
-    color:white;
+    background-color: #C08D32;
+    color: white;
     text-align: center;
 }
 
-.week-calendar .reservation{
-     background-color: lightgray;
+.week-calendar .reservation {
+    background-color: lightgray;
 }
 
-.week-calendar .reservation a:hover{
-    background-color:grey;
+.week-calendar .reservation a:hover {
+    background-color: grey;
     text-decoration: underline;
-    border-radius:5px;
+    border-radius: 5px;
 }
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 /****RESPONSIVE PLANNING****/
+
+@media screen and (max-width: 375px) {
+
+    .week-calendar td, th {
+        font-size: 35%;
+    }
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+
+    .week-calendar td, th {
+        font-size: 50%;
+    }
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -1079,83 +1117,111 @@ td{
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-.form_element{
-    display:flex;
+.form_element {
+    display: flex;
     flex-direction: column;
 }
 
-.reservation-form{
+.reservation-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:80%;
-    margin-top:5%;
+    width: 80%;
+    margin-top: 5%;
+    background-color: #333;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
-.form-reservation-input label{
+.form-reservation-input label {
     font-family: 'Montserrat', sans-serif;
+
 }
 
 .form-reservation-input input[type="text"],
 .form-reservation-input input[type="date"],
-.form-reservation-input input[type="time"]
-{
-    border-radius:5px;
-    border:0.1px solid lightgray;
-    height:25px;
-    outline-color:#C08D32;
+.form-reservation-input input[type="time"] {
+    border-radius: 5px;
+    border: 0.1px solid lightgray;
+    height: 25px;
+    outline-color: #C08D32;
     font-family: 'Montserrat', sans-serif;
-    padding:1%;
-    font-weight:bold;
+    padding: 1%;
+    font-weight: bold;
 }
 
-.form-reservation-input input[type="date"]{
-    width:40%;
+.form-reservation-input input[type="date"] {
+    width: 40%;
 }
 
-.ligne-form-resa{
-    display:flex;
+.ligne-form-resa {
+    display: flex;
     justify-content: space-around;
 }
 
 
-.form-reservation_button{
-    border-radius:10px;
-    height:40px;
-    border:0.1px solid lightgray;
+.form-reservation_button {
+    border-radius: 10px;
+    height: 40px;
+    border: 0.1px solid lightgray;
     font-family: 'Montserrat', sans-serif;
-    padding:2%;
-    font-size:15px;
-    background-color:#333;
-    color:white;
-    font-weight:100;
-    outline:none;
+    padding: 2%;
+    font-size: 15px;
+    background-color: #333;
+    color: white;
+    font-weight: 100;
+    outline: none;
     align-self: center;
 }
 
-.form-reservation_button:hover{
-    color:#333;
-    background-color:lightgray;
-    border:1px solid gray;
-    transition :1s;
+.form-reservation_button:hover {
+    color: #333;
+    background-color: lightgray;
+    border: 1px solid gray;
+    transition: 1s;
 }
 
-.form-reservation_button:active{
-    color:white;
-    background-color:grey;
-    border:1px solid #333;
-    transition :2s;
+.form-reservation_button:active {
+    color: white;
+    background-color: grey;
+    border: 1px solid #333;
+    transition: 2s;
 }
-
 
 
 /****RESPONSIVE RESERVATION-FORM****/
 
+@media screen and (max-width: 375px) {
+
+    .reservation-form {
+        width: 95%;
+        margin-top: 2%;
+    }
+
+    .form_element {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+
+    .reservation-form {
+        width: 95%;
+        margin-top: 2%;
+    }
+
+    .form_element {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-
 
 
 /****RESERVATION****/
@@ -1163,29 +1229,29 @@ td{
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-.body-reservation{
-    background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
-    background-size:contain;
+.body-reservation {
+    background: url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
+    background-size: contain;
 }
 
-.reservation-event{
-    margin-top:10%;
+.reservation-event {
+    margin-top: 10%;
     font-family: 'Montserrat', sans-serif;
-    background-color:#333;
-    color:white;
-    padding:2%;
+    background-color: #333;
+    color: white;
+    padding: 2%;
     margin-bottom: 5%;
-    width:50%;
+    width: 50%;
     text-align: center;
 }
 
 
-.reservation-event h2{
-    text-align:center;
+.reservation-event h2 {
+    text-align: center;
 }
 
 .reservation-event span {
-    font-weight:bold;
+    font-weight: bold;
 }
 
 /****RESERVATION RESPONSIVE****/
