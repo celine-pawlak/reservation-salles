@@ -648,6 +648,154 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
+
+/****USER RESERVATION (modification)****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+.body-user_reservation span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+    
+}
+
+.main-user_reservation {
+    background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
+    background-size:contain;
+    padding: 5%;
+}
+
+
+.main-user_reservation{
+    color:black;
+    font-size:30px;
+    font-weight:bold;
+
+}
+
+.main-user_reservation h2{
+}
+
+.main-user_reservation p{
+
+}
+
+.contour-user_reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form-user_reservation{
+    display: flex;
+    flex-direction: column;
+    background-color: #9c917c;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5%;
+    width: 60%;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.form-user_reservation p,
+.form-user_reservation p a,
+.form-user_reservation label {
+    font-size: 18px;
+}
+
+.form-user_reservation p a {
+    text-decoration: underline;
+}
+
+.form-user_reservation p a:hover {
+    color: darkorange;
+}
+
+.form-user_reservation input[type="text"],
+.form-user_reservation input[type="password"] {
+    width: 100%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 1%;
+    border: none;
+    color:  #9c917c;
+    border-radius:10px;
+    outline:none;
+}
+
+.form-user_reservation input[type="text"]:hover,
+.form-user_reservation input[type="password"]:hover {
+    border: 2px solid #eddebe;
+    
+}
+
+.user_reservation-boutons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.user_rerservation-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    font-family: 'Montserrat', sans-serif;
+    width: 30%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+.user_rerservation-button:hover {
+    transition: 1s;
+    background-color: #FFC146;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 5px #CE8025;
+
+}
+
+.user_rerservation-button:active {
+
+    box-shadow: 0 4px #CE8025;
+    transform: translateY(4px);
+}
+
+.user_rerservation-delete{
+    border-radius:50%;
+    background-color:#FFC146; 
+    border:none;
+    height:40px;
+    width:6%;
+    align-items:  center;
+}
+
+.user_rerservation-delete:hover{
+    background-color:#E94C16;
+    transition:1s;
+}
+
+
+/****USER RESERVATION (modification) RESPONSIVE****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 /****PLANNING****/
 /*
 .content {
