@@ -108,8 +108,8 @@
                     <label for="description">Description</label>
                     <input type="text" name="description" value="<?=$description?>" ><br>
                     <div class="user_reservation-boutons">
-                        <button name="modify_reservation_<?=$key?>" type="submit" class="user_rerservation-button">Modifier</button>
-                        <button name="suppress_reservation_<?=$key?>" type="submit" class="user_rerservation-delete"><i class="fad fa-trash-alt"></i></button>
+                        <button name="modify_reservation_<?=$key?>" type="submit" class="user_reservation-button">Modifier</button>
+                        <button name="suppress_reservation_<?=$key?>" type="submit" class="user_reservation-delete"><i class="fad fa-trash-alt"></i></button>
                     </div>
                 </form>
                 <?php

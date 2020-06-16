@@ -38,6 +38,42 @@ a {
     box-sizing: border-box;
 }
 
+/****TRONC COMMUN****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.body-profil span, 
+.body-user_reservation span,
+.body-inscription span,
+.body-profil span{
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+.body-user_reservation span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+
+.body-inscription span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+
+.body-profil span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+    
+}
+
+
+
+
 /*** HEADER ***/
 
 header h1,
@@ -544,6 +580,8 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
+
+
 /****PROFIL****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -752,7 +790,7 @@ header a:hover,
     align-items: baseline;
 }
 
-.user_rerservation-button {
+.user_reservation-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -774,7 +812,7 @@ header a:hover,
 }
 
 
-.user_rerservation-button:hover {
+.user_reservation-button:hover {
     transition: 1s;
     background-color: #FFC146;
     -webkit-transform: scale(1.1);
@@ -783,13 +821,13 @@ header a:hover,
 
 }
 
-.user_rerservation-button:active {
+.user_reservation-button:active {
 
     box-shadow: 0 4px #CE8025;
     transform: translateY(4px);
 }
 
-.user_rerservation-delete{
+.user_reservation-delete{
     border-radius:50%;
     background-color:#FFC146; 
     border:none;
@@ -798,7 +836,7 @@ header a:hover,
     align-items:  center;
 }
 
-.user_rerservation-delete:hover{
+.user_reservation-delete:hover{
     background-color:#E94C16;
     transition:1s;
 }
