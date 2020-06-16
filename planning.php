@@ -165,7 +165,7 @@ $page_selected = "planning";
                     }
                 }
             }
-            if (empty($errors)) {
+            if (empty($errors) and !isset($not_all_null)) {
                 if (($h_to_int_fin - $h_to_int_debut) > 1) {
                     $creneaux = $h_to_int_fin - $h_to_int_debut;
                     for ($i = 0; $i < $creneaux; $i++) {
@@ -180,7 +180,6 @@ $page_selected = "planning";
                     $request = "INSERT INTO `reservationsalles`.`reservations`(titre, description, debut, fin, id_utilisateur) VALUES ('" . $titre . "', '" . $description . "', '" . $debut . "', '" . $fin . "', '" . $user_id['id'] . "');";
                     $query = mysqli_query($db, $request);
                 }
-                header('location: planning.php');
             }
         }
     } elseif (isset($_POST['reservation_button']) and !empty($_POST)) {
