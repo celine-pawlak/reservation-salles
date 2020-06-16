@@ -259,8 +259,8 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .banniere {
-    background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
-    background-size: cover;
+    background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) fixed;
+    background-size: contain;
     color: white;
     height: 400px;
     display: flex;
@@ -270,8 +270,9 @@ header a:hover,
     padding: 2%;
 }
 
-.banniere h1 {
+.banniere h2 {
     font-family: 'Courgette', cursive;
+    font-size:40px;
 }
 
 .column {
