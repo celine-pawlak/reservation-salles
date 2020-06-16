@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Modifier réservations - Réservation salles</title>
 </head>
-<body>
+<body class="body-user_reservation">
     <header>
         <?php
         include 'header.php';
@@ -87,8 +87,8 @@
         $user_reservations = mysqli_fetch_all($query);
         ?>
     </header>
-    <main>
-        <div class="content">
+    <main class="main-user_reservation">
+        <div class="content contour-user_reservation">
         <?= renderErrors($errors) ?>
         <?php
         foreach($user_reservations as $key => $value)
@@ -100,12 +100,12 @@
                 $date = $user_reservations[$key][4];
                 ?>
                 <p>Le <?= $date ?> de <?= $heure_debut ?> à <?= $heure_fin ?> :</p>
-                <form action="user_reservation.php" method="post">
+                <form action="user_reservation.php" method="post" class="form-user_reservation">
                     <label for="titre">Titre</label>
                     <input type="text" name="titre" value="<?=$titre?>" >
                     <label for="description">Description</label>
                     <input type="text" name="description" value="<?=$description?>" >
-                    <button name="modify_reservation_<?=$key?>" type="submit">Modifier</button>
+                    <button name="modify_reservation_<?=$key?>" type="submit" class="user_rerservation-button">Modifier</button>
                     <p>ou</p>
                     <button name="suppress_reservation_<?=$key?>" type="submit"><i class="fad fa-trash-alt"></i></button>
                 </form>
@@ -115,7 +115,8 @@
         </div>
     </main>
     <footer>
-
+        <?php
+    include("footer.php") ?>
     </footer>
 
 </body>
