@@ -20,7 +20,7 @@ $page_selected = "index";
             $errors = [];
             ?>
             <section class='banniere'>
-                <h1>Roomy</h1>
+                <h2>Roomy</h2>
             </section>
 
         </header>

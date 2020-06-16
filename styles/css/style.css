@@ -198,7 +198,6 @@ header a:hover,
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 200px;
     background-color: #C08D32;
     color: white;
     padding: 5%;
@@ -264,8 +263,8 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 .banniere {
-    background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) center fixed;
-    background-size: cover;
+    background: url(https://www.distinction.qc.ca/wp-content/uploads/DIST_Banniere_Salles_2128x638_soprano1.jpg) fixed;
+    background-size: contain;
     color: white;
     height: 400px;
     display: flex;
@@ -275,8 +274,9 @@ header a:hover,
     padding: 2%;
 }
 
-.banniere h1 {
+.banniere h2 {
     font-family: 'Courgette', cursive;
+    font-size:40px;
 }
 
 .column {
@@ -934,6 +934,7 @@ header a:hover,
     flex-direction: column;
     align-items: center;
 }
+
 .container {
     display: block;
     position: relative;
@@ -985,6 +986,10 @@ header a:hover,
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+
+.planning-form{
+    background:url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
+    background-size:contain;
 }
 
 .reservation-form{
@@ -1000,14 +1005,15 @@ header a:hover,
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
+    
 }
 .week-calendar{
     width:80%;
     padding:1%;
 }
 
-.week-calendar table {
-    border-collapse: collapse;
+.week-container-group table {
+   background-color:white;
 }
 
 
