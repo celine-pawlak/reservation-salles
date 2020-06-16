@@ -5,13 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=yes"/>
-    <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/style.css">
     <script src="https://kit.fontawesome.com/217c9d0a4d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Réservation</title>
 </head>
-<body>
+<body class="body-reservation">
 <header>
     <?php
     include("header.php");
@@ -37,19 +37,21 @@
     <?php
     echo renderErrors($errors);
     if (empty($errors)) { ?>
-        <div class="content">
-            <h2><?= $reservation['titre'] ?></h2>
+        <div class="content reservation-event">
+            <h2><?= $reservation['titre'] ?></h2><br>
+            <h3>Date</h3>
             <p>Le <?= $reservation['date'] ?> de <?= $reservation['heure_debut'] ?>
-                à <?= $reservation['heure_fin'] ?></p>
+                à <?= $reservation['heure_fin'] ?></p><br>
             <h3>Description</h3>
-            <p><?= $reservation['description'] ?></p>
+            <p><?= $reservation['description'] ?></p><br>
             <p>Réservé par <?= $user_login[0] ?></p>
         </div>
         <?php
     } ?>
 </main>
 <footer>
-
+    <?php
+    include("footer.php") ?>
 </footer>
 </body>
 </html>

@@ -493,12 +493,26 @@ header a:hover,
     font-style: italic;
     color: darkorange;
     font-size: 15px;
+    
 }
 
 .main-profil {
-    background-image: url();
-    background-size: contain;
+    background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
+    background-size:contain;
     padding: 5%;
+}
+
+.main-profil h2{
+    text-align: center;
+}
+
+.main-profil p{
+    font-size:30px;
+    color:white;
+    font-family: 'Courgette', cursive;
+    text-shadow:1px 1px 3px black;
+    -webkit-text-stroke: 1px #9c917c;
+
 }
 
 .contour-profil {
@@ -512,20 +526,13 @@ header a:hover,
 .form-profil {
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: #9c917c;
     color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 5%;
     width: 60%;
     border-radius: 20px;
     margin-bottom: 2%;
-}
-
-.form-profil h1 {
-    display: flex;
-    justify-content: center;
-    border-bottom: 0.5px solid darkorange;
-    padding-bottom: 3%;
 }
 
 .form-profil p,
@@ -550,12 +557,15 @@ header a:hover,
     font-size: 15px;
     padding: 1%;
     border: none;
-    color: darkorange;
+    color:  #9c917c;
+    border-radius:10px;
+    outline:none;
 }
 
 .form-profil input[type="text"]:hover,
 .form-profil input[type="password"]:hover {
-    border: 1px solid darkorange;
+    border: 2px solid #eddebe;
+    
 }
 
 .profil-button {
@@ -563,7 +573,7 @@ header a:hover,
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: darkorange;
+    background-color: #333;
     font-family: 'Montserrat', sans-serif;
     width: 60%;
     height: 40px;
@@ -577,7 +587,6 @@ header a:hover,
     transition: .3s ease-in-out;
     margin-top: 2%;
     margin-bottom: 2%;
-
 }
 
 
@@ -610,6 +619,8 @@ header a:hover,
     max-width: 1600px;
 }
 */
+
+.reservation-form h2, p{font-family: 'Montserrat', sans-serif;}
 
 .week-container-group {
     display: flex;
@@ -739,3 +750,37 @@ table {
 /****RESPONSIVE RESERVATION-FORM****/
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+/****RESERVATION****/
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+.body-reservation{          background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
+    background-size:contain;
+}
+
+.reservation-event{
+    margin-top:10%;
+    font-family: 'Montserrat', sans-serif; 
+    background-color:#333;
+    color:white;
+    padding:5%;
+    margin-bottom: 5%;
+    width:60%;
+
+}
+
+
+.reservation-event h2{
+    text-align:center;
+}
+
+/****RESERVATION ****/
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+

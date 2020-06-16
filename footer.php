@@ -1,9 +1,3 @@
-<?php
-
-mysqli_close($db);
-
-?>
-
 <section class="footer">
     <div class="logo">
         <h1>Roomy</h1>
@@ -39,3 +33,11 @@ mysqli_close($db);
         </ul>
     </div>
 </section>
+
+
+<?php
+
+mysqli_close($db);
+
+?>
+

@@ -194,7 +194,7 @@ $page_selected = "planning";
         <h2>Réservez un créneau *</h2>
         <?php
         include 'reservation-form.php'; ?>
-        <p><em> * Les réservations se font du lundi au vendredi et de 8h et 19h.<br>Les créneaux ont une durée fixe
+        <p><em> * Les réservations se font du lundi au vendredi et de 8h à 19h.<br>Les créneaux ont une durée fixe
                 d’une heure.</em></p>
     </div>
     <div class="week-container-group">
