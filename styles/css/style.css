@@ -183,6 +183,18 @@ header a:hover,
 /***RESPONSIVE HEADER + FOOTER***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+@media (max-width:600px) {
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
+
+
 
 /*** INDEX ***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -632,7 +644,6 @@ header a:hover,
     font-style: italic;
     color: darkorange;
     font-size: 15px;
-    
 }
 
 .main-user_reservation {
@@ -927,15 +938,20 @@ table {
     font-family: 'Montserrat', sans-serif; 
     background-color:#333;
     color:white;
-    padding:5%;
+    padding:2%;
     margin-bottom: 5%;
-    width:60%;
+    width:50%;
+    text-align: center;
 
 }
 
 
 .reservation-event h2{
     text-align:center;
+}
+
+.reservation-event span {
+    font-weight:bold;
 }
 
 /****RESERVATION ****/

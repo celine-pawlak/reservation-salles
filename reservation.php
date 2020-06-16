@@ -39,13 +39,13 @@
     echo renderErrors($errors);
     if (empty($errors)) { ?>
         <div class="content reservation-event">
-            <h2><?= $reservation['titre'] ?></h2><br>
+            <h2><?= $reservation['titre'] ?></h2>
             <h3>Date</h3>
             <p>Le <?= $reservation['date'] ?> de <?= $reservation['heure_debut'] ?>
-                à <?= $reservation['heure_fin'] ?></p><br>
+                à <?= $reservation['heure_fin'] ?></p>
             <h3>Description</h3>
-            <p><?= $reservation['description'] ?></p><br>
-            <p>Réservé par <?= $user_login[0] ?></p>
+            <p><?= $reservation['description'] ?></p>
+            <p><span>Réservé par</span> <?= $user_login[0] ?></p>
         </div>
         <?php
     } ?>
