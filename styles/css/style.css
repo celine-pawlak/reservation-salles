@@ -128,7 +128,7 @@ header a:hover,
 .footer {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
     height: 200px;
     background-color: #C08D32;
@@ -327,6 +327,41 @@ header a:hover,
     }
 
 }
+@media (min-width: 630px){
+    .form-profil{
+        width:600px;
+    }
+    .form-profil p,
+    .form-profil p a,
+    .form-profil label {
+        font-size: 18px;
+    }
+    .profil-button{
+        font-size: 20px;
+    }
+    .main-profil p{
+        font-size:30px;
+    }
+}
+@media (max-width: 630px){
+    .form-profil{
+        width:90%;
+    }
+    .form-profil h2{
+        font-size: 1em;
+    }
+    .form-profil label{
+        font-size: 14px;
+    }
+    .profil-button{
+        font-size: 16px;
+    }
+    .main-profil p{
+        font-size: 20px;
+    }
+}
+
+
 
 
 /****INSCRIPTION****/
@@ -405,6 +440,7 @@ header a:hover,
     padding: 1%;
     border: none;
     color: darkorange;
+    font-weight: bold;
 }
 
 .form-inscription input[type="text"]:hover,
@@ -509,7 +545,7 @@ header a:hover,
 .main-profil {
     background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
     background-size:contain;
-    padding: 5%;
+    padding: 2rem 0;
 }
 
 .main-profil h2{
@@ -517,8 +553,7 @@ header a:hover,
 }
 
 .main-profil p{
-    font-size:30px;
-    color:white;
+    color:var(--soft-gold);
     font-family: 'Courgette', cursive;
     text-shadow:1px 1px 3px black;
     -webkit-text-stroke: 1px #9c917c;
@@ -529,8 +564,6 @@ header a:hover,
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 .form-profil {
@@ -539,16 +572,9 @@ header a:hover,
     background-color: #9c917c;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    padding: 5%;
-    width: 60%;
+    padding: 3%;
     border-radius: 20px;
-    margin-bottom: 2%;
-}
-
-.form-profil p,
-.form-profil p a,
-.form-profil label {
-    font-size: 18px;
+    margin: 0.5rem;
 }
 
 .form-profil p a {
@@ -581,16 +607,15 @@ header a:hover,
 .profil-button {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     color: white;
     background-color: #333;
     font-family: 'Montserrat', sans-serif;
     width: 60%;
-    height: 40px;
+    height: 2rem;
     padding: 1%;
     border-radius: 50px;
     border: none;
-    font-size: 20px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
