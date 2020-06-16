@@ -658,6 +658,7 @@ header a:hover,
     color:  #9c917c;
     border-radius:10px;
     outline:none;
+    font-weight: bold;
 }
 
 .form-profil input[type="text"]:hover,
@@ -739,7 +740,7 @@ header a:hover,
 }
 
 .main-user_reservation p{
-
+    font-family: Montserrat;
 }
 
 .contour-user_reservation {
@@ -787,6 +788,7 @@ header a:hover,
     color:  #9c917c;
     border-radius:10px;
     outline:none;
+    font-weight: bold;
 }
 
 .form-user_reservation input[type="text"]:hover,
@@ -802,7 +804,7 @@ header a:hover,
     align-items: baseline;
 }
 
-.user_rerservation-button {
+.user_reservation-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -824,7 +826,7 @@ header a:hover,
 }
 
 
-.user_rerservation-button:hover {
+.user_reservation-button:hover {
     transition: 1s;
     background-color: #FFC146;
     -webkit-transform: scale(1.1);
@@ -833,13 +835,13 @@ header a:hover,
 
 }
 
-.user_rerservation-button:active {
+.user_reservation-button:active {
 
     box-shadow: 0 4px #CE8025;
     transform: translateY(4px);
 }
 
-.user_rerservation-delete{
+.user_reservation-delete{
     border-radius:50%;
     background-color:#FFC146; 
     border:none;
@@ -848,7 +850,7 @@ header a:hover,
     align-items:  center;
 }
 
-.user_rerservation-delete:hover{
+.user_reservation-delete:hover{
     background-color:#E94C16;
     transition:1s;
 }
@@ -879,11 +881,12 @@ header a:hover,
     .form-user_reservation label {
         font-size: 18px;
     }
-    .user_rerservation-button{
+    .user_reservation-button{
         font-size: 20px;
     }
     .main-user_reservation p{
         font-size:30px;
+
     }
 }
 
@@ -898,12 +901,30 @@ header a:hover,
     .form-user_reservation label{
         font-size: 14px;
     }
-    .user_rerservation-button{
-        font-size: 16px;
-    }
     .main-user_reservation p{
         font-size: 20px;
     }
+    .contour-user_reservation p{
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media (max-width: 501px){
+    .user_reservation-delete{
+        min-width:70%;
+        border-radius: 50px;
+    }
+    .user_reservation-button{
+        font-size: 16px;
+        min-width: 100%;
+    }
+
+}
+@media (max-width: 500px){
+    .user_reservation-boutons{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }
 
 
