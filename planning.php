@@ -53,7 +53,7 @@ $page_selected = "planning";
 
     if (!empty($_POST['titre']) and !empty($_POST['description']) and !empty($_POST['date']) and !empty($_POST['heure_debut'])) {
         $titre = htmlentities(trim($_POST['titre']));
-        $description = htmlentities(trim($_POST['description']));
+        $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
         $date = $_POST['date'];
         $heure_debut = $_POST['heure_debut'];
         $heure_fin = $_POST['heure_fin'];
