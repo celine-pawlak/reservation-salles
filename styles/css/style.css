@@ -178,7 +178,7 @@ header a:hover,
 .footer {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
     height: 200px;
     background-color: #C08D32;
@@ -232,6 +232,18 @@ header a:hover,
 
 /***RESPONSIVE HEADER + FOOTER***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@media (max-width:600px) {
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
+
 
 
 /*** INDEX ***/
@@ -377,6 +389,41 @@ header a:hover,
     }
 
 }
+@media (min-width: 630px){
+    .form-profil{
+        width:600px;
+    }
+    .form-profil p,
+    .form-profil p a,
+    .form-profil label {
+        font-size: 18px;
+    }
+    .profil-button{
+        font-size: 20px;
+    }
+    .main-profil p{
+        font-size:30px;
+    }
+}
+@media (max-width: 630px){
+    .form-profil{
+        width:90%;
+    }
+    .form-profil h2{
+        font-size: 1em;
+    }
+    .form-profil label{
+        font-size: 14px;
+    }
+    .profil-button{
+        font-size: 16px;
+    }
+    .main-profil p{
+        font-size: 20px;
+    }
+}
+
+
 
 
 /****INSCRIPTION****/
@@ -455,6 +502,7 @@ header a:hover,
     padding: 1%;
     border: none;
     color: darkorange;
+    font-weight: bold;
 }
 
 .form-inscription input[type="text"]:hover,
@@ -559,7 +607,7 @@ header a:hover,
 .main-profil {
     background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
     background-size:contain;
-    padding: 5%;
+    padding: 2rem 0;
 }
 
 .main-profil h2{
@@ -567,8 +615,7 @@ header a:hover,
 }
 
 .main-profil p{
-    font-size:30px;
-    color:white;
+    color:var(--soft-gold);
     font-family: 'Courgette', cursive;
     text-shadow:1px 1px 3px black;
     -webkit-text-stroke: 1px #9c917c;
@@ -579,8 +626,6 @@ header a:hover,
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 .form-profil {
@@ -589,16 +634,9 @@ header a:hover,
     background-color: #9c917c;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    padding: 5%;
-    width: 60%;
+    padding: 3%;
     border-radius: 20px;
-    margin-bottom: 2%;
-}
-
-.form-profil p,
-.form-profil p a,
-.form-profil label {
-    font-size: 18px;
+    margin: 0.5rem;
 }
 
 .form-profil p a {
@@ -631,16 +669,15 @@ header a:hover,
 .profil-button {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     color: white;
     background-color: #333;
     font-family: 'Montserrat', sans-serif;
     width: 60%;
-    height: 40px;
+    height: 2rem;
     padding: 1%;
     border-radius: 50px;
     border: none;
-    font-size: 20px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
@@ -673,12 +710,216 @@ header a:hover,
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
+
+/****USER RESERVATION (modification)****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+.body-user_reservation span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+.main-user_reservation {
+    background:url(https://www.ambiance-sticker.com/images/Image/sticker-tapisserie-scandinave-vilfred-ambiance-sticker-col-mat-ROS-B726.png) center fixed;
+    background-size:contain;
+    padding: 5%;
+}
+
+
+.main-user_reservation{
+    color:black;
+    font-size:30px;
+    font-weight:bold;
+
+}
+
+.main-user_reservation h2{
+}
+
+.main-user_reservation p{
+
+}
+
+.contour-user_reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form-user_reservation{
+    display: flex;
+    flex-direction: column;
+    background-color: #9c917c;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5%;
+    width: 60%;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.form-user_reservation p,
+.form-user_reservation p a,
+.form-user_reservation label {
+    font-size: 18px;
+}
+
+.form-user_reservation p a {
+    text-decoration: underline;
+}
+
+.form-user_reservation p a:hover {
+    color: darkorange;
+}
+
+.form-user_reservation input[type="text"],
+.form-user_reservation input[type="password"] {
+    width: 100%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    padding: 1%;
+    border: none;
+    color:  #9c917c;
+    border-radius:10px;
+    outline:none;
+}
+
+.form-user_reservation input[type="text"]:hover,
+.form-user_reservation input[type="password"]:hover {
+    border: 2px solid #eddebe;
+    
+}
+
+.user_reservation-boutons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.user_rerservation-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    font-family: 'Montserrat', sans-serif;
+    width: 30%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+.user_rerservation-button:hover {
+    transition: 1s;
+    background-color: #FFC146;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 5px #CE8025;
+
+}
+
+.user_rerservation-button:active {
+
+    box-shadow: 0 4px #CE8025;
+    transform: translateY(4px);
+}
+
+.user_rerservation-delete{
+    border-radius:50%;
+    background-color:#FFC146; 
+    border:none;
+    height:40px;
+    width:7%;
+    align-items:  center;
+}
+
+.user_rerservation-delete:hover{
+    background-color:#E94C16;
+    transition:1s;
+}
+
+
+/****USER RESERVATION (modification) RESPONSIVE****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+@media (max-width:900px) {
+
+
+
+}
+
+@media (max-width:700px) {
+
+
+}
+
+
+@media (min-width: 630px){
+    .form-user_reservation{
+        width:600px;
+    }
+    .form-user_reservation p,
+    .form-user_reservation p a,
+    .form-user_reservation label {
+        font-size: 18px;
+    }
+    .user_rerservation-button{
+        font-size: 20px;
+    }
+    .main-user_reservation p{
+        font-size:30px;
+    }
+}
+
+
+@media (max-width: 630px){
+    .form-user_reservation{
+        width:90%;
+    }
+    .form-user_reservationl h2{
+        font-size: 1em;
+    }
+    .form-user_reservation label{
+        font-size: 14px;
+    }
+    .user_rerservation-button{
+        font-size: 16px;
+    }
+    .main-user_reservation p{
+        font-size: 20px;
+    }
+}
+
+
+
 /****PLANNING****/
 /*
 .content {
     max-width: 1600px;
 }
 */
+.reservation-form{
+    background-color:#333;
+    color:white;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+}
 
 .reservation-form h2, p{font-family: 'Montserrat', sans-serif;}
 
@@ -820,7 +1061,8 @@ table {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-.body-reservation{          background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
+.body-reservation{          
+    background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
     background-size:contain;
 }
 
@@ -829,9 +1071,10 @@ table {
     font-family: 'Montserrat', sans-serif; 
     background-color:#333;
     color:white;
-    padding:5%;
+    padding:2%;
     margin-bottom: 5%;
-    width:60%;
+    width:50%;
+    text-align: center;
 
 }
 
@@ -840,7 +1083,11 @@ table {
     text-align:center;
 }
 
-/****RESERVATION ****/
+.reservation-event span {
+    font-weight:bold;
+}
+
+/****RESERVATION RESPONSIVE****/
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 

@@ -74,7 +74,7 @@ $page_selected = "connexion";
             <input class="no-border" id="password" name="password" type="password" placeholder="Insérez votre mot de passe" required>
             <br>
             <div class="inscription-button" >
-                <input class="inscription-button" type="submit" name="signin" value="Se connecter">
+                <input type="submit" name="signin" value="Se connecter">
             </div>
             <p>Vous n'êtes pas inscris ?<br><a href="inscription.php">Inscrivez-vous</a></p>
         </form>

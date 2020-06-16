@@ -247,7 +247,7 @@ $page_selected = "planning";
                         endforeach; ?>
                         <?php
                         if ($v == 0) : ?>
-                            <td>Réserver</td>
+                            <td>Disponible</td>
                             <?php
                         endif; ?>
                         <?php
