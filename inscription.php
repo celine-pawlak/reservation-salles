@@ -64,13 +64,13 @@
                 <h1> INSCRIPTION </h1><br/>
 
                 <label for="login">Identifiant</label>
-                <input type="text" id="login" name="login" placeholder="Créez votre pseudo"> <br/>
+                <input type="text" id="login" name="login" placeholder="Créez votre pseudo" required> <br/>
                 <br>
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe"> <br />
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required> <br />
                 <br>
                 <label for="mdp-check">Confirmation mot de passe</label>
-                <input type="password" id="mdp_check" name="mdp_check" placeholder="Confirmez votre mot de passe"> <br/>
+                <input type="password" id="mdp_check" name="mdp_check" placeholder="Confirmez votre mot de passe" required> <br/>
                 <br>
                 <div class="inscription-button" >
                     <input type="submit" value="VALIDER" name="submit">
