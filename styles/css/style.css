@@ -38,6 +38,42 @@ a {
     box-sizing: border-box;
 }
 
+/****TRONC COMMUN****/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.body-profil span, 
+.body-user_reservation span,
+.body-inscription span,
+.body-profil span{
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+.body-user_reservation span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+
+.body-inscription span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+}
+
+
+.body-profil span {
+    font-style: italic;
+    color: darkorange;
+    font-size: 15px;
+    
+}
+
+
+
+
 /*** HEADER ***/
 
 header h1,
@@ -592,6 +628,8 @@ header a:hover,
 
 /***RESPONSIVE CONNEXION***/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
 
 
 /****PROFIL****/
