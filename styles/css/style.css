@@ -641,6 +641,14 @@ header a:hover,
     padding: 5%;
 }
 
+
+.main-user_reservation{
+    color:black;
+    font-size:30px;
+    font-weight:bold;
+
+}
+
 .main-user_reservation h2{
 }
 
@@ -701,6 +709,13 @@ header a:hover,
     
 }
 
+.user_reservation-boutons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
 .user_rerservation-button {
     display: flex;
     justify-content: center;
@@ -737,6 +752,21 @@ header a:hover,
     box-shadow: 0 4px #CE8025;
     transform: translateY(4px);
 }
+
+.user_rerservation-delete{
+    border-radius:50%;
+    background-color:#FFC146; 
+    border:none;
+    height:40px;
+    width:6%;
+    align-items:  center;
+}
+
+.user_rerservation-delete:hover{
+    background-color:#E94C16;
+    transition:1s;
+}
+
 
 /****USER RESERVATION (modification) RESPONSIVE****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

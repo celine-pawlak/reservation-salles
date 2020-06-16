@@ -104,12 +104,13 @@
                 <p>Le <?= $date ?> de <?= $heure_debut ?> à <?= $heure_fin ?> :</p>
                 <form action="user_reservation.php" method="post" class="form-user_reservation">
                     <label for="titre">Titre</label>
-                    <input type="text" name="titre" value="<?=$titre?>" >
+                    <input type="text" name="titre" value="<?=$titre?>" ><br>
                     <label for="description">Description</label>
-                    <input type="text" name="description" value="<?=$description?>" >
-                    <button name="modify_reservation_<?=$key?>" type="submit" class="user_rerservation-button">Modifier</button>
-                    <p>ou</p>
-                    <button name="suppress_reservation_<?=$key?>" type="submit"><i class="fad fa-trash-alt"></i></button>
+                    <input type="text" name="description" value="<?=$description?>" ><br>
+                    <div class="user_reservation-boutons">
+                        <button name="modify_reservation_<?=$key?>" type="submit" class="user_rerservation-button">Modifier</button>
+                        <button name="suppress_reservation_<?=$key?>" type="submit" class="user_rerservation-delete"><i class="fad fa-trash-alt"></i></button>
+                    </div>
                 </form>
                 <?php
             }
