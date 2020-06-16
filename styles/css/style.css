@@ -920,11 +920,12 @@ header a:hover,
     }
 
 }
-@media (max-width: 500px){
-    .user_reservation-boutons{
+@media (max-width: 500px) {
+    .user_reservation-boutons {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
 }
 
 
@@ -1096,7 +1097,6 @@ table {
     margin-bottom: 5%;
     width:50%;
     text-align: center;
-
 }
 
 
