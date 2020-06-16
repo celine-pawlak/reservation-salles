@@ -920,6 +920,12 @@ header a:hover,
     max-width: 1600px;
 }
 */
+
+.planning-form{
+    background:url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
+    background-size:contain;
+}
+
 .reservation-form{
     background-color:#333;
     color:white;
@@ -933,14 +939,15 @@ header a:hover,
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
+    
 }
 .week-calendar{
     width:80%;
     padding:1%;
 }
 
-.week-calendar table {
-    border-collapse: collapse;
+.week-container-group table {
+   background-color:white;
 }
 
 

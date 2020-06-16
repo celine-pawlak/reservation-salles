@@ -14,7 +14,7 @@ $page_selected = "planning";
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"></head>
-<body>
+<body class="planning-form">
 <header>
     <?php
     include("header.php");
