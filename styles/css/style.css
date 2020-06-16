@@ -794,7 +794,7 @@ header a:hover,
     background-color:#FFC146; 
     border:none;
     height:40px;
-    width:6%;
+    width:7%;
     align-items:  center;
 }
 
@@ -807,12 +807,69 @@ header a:hover,
 /****USER RESERVATION (modification) RESPONSIVE****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+
+@media (max-width:900px) {
+
+
+
+}
+
+@media (max-width:700px) {
+
+
+}
+
+
+@media (min-width: 630px){
+    .form-user_reservation{
+        width:600px;
+    }
+    .form-user_reservation p,
+    .form-user_reservation p a,
+    .form-user_reservation label {
+        font-size: 18px;
+    }
+    .user_rerservation-button{
+        font-size: 20px;
+    }
+    .main-user_reservation p{
+        font-size:30px;
+    }
+}
+
+
+@media (max-width: 630px){
+    .form-user_reservation{
+        width:90%;
+    }
+    .form-user_reservationl h2{
+        font-size: 1em;
+    }
+    .form-user_reservation label{
+        font-size: 14px;
+    }
+    .user_rerservation-button{
+        font-size: 16px;
+    }
+    .main-user_reservation p{
+        font-size: 20px;
+    }
+}
+
+
+
 /****PLANNING****/
 /*
 .content {
     max-width: 1600px;
 }
 */
+.reservation-form{
+    background-color:#333;
+    color:white;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+}
 
 .reservation-form h2, p{font-family: 'Montserrat', sans-serif;}
 
@@ -954,7 +1011,8 @@ table {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-.body-reservation{          background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
+.body-reservation{          
+    background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
     background-size:contain;
 }
 
@@ -979,7 +1037,7 @@ table {
     font-weight:bold;
 }
 
-/****RESERVATION ****/
+/****RESERVATION RESPONSIVE****/
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
