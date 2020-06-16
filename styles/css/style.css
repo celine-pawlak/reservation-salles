@@ -40,7 +40,7 @@ a {
 
 /****TRONC COMMUN****/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
- 
+
 .body-user_reservation span,
 .body-inscription span,
 .body-profil span{
@@ -668,7 +668,7 @@ header a:hover,
 .form-profil input[type="text"]:hover,
 .form-profil input[type="password"]:hover {
     border: 2px solid #eddebe;
-    
+
 }
 
 .profil-button {
@@ -791,7 +791,7 @@ header a:hover,
 .form-user_reservation input[type="text"]:hover,
 .form-user_reservation input[type="password"]:hover {
     border: 2px solid #eddebe;
-    
+
 }
 
 .user_reservation-boutons{
@@ -840,7 +840,7 @@ header a:hover,
 
 .user_reservation-delete{
     border-radius:50%;
-    background-color:#FFC146; 
+    background-color:#FFC146;
     border:none;
     height:40px;
     width:7%;
@@ -1006,7 +1006,7 @@ header a:hover,
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
-    
+
 }
 .week-calendar{
     width:80%;
@@ -1015,6 +1015,8 @@ header a:hover,
 
 .week-container-group table {
    background-color:white;
+    border-bottom-left-radius: 5px;
+     border-bottom-right-radius: 5px;
 }
 
 
@@ -1024,6 +1026,12 @@ table {
     border: 0.1px solid lightgray;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
+
+}
+
+
+.week-calendar th,
+td{
     border-radius:5px;
 }
 
@@ -1089,7 +1097,7 @@ table {
     font-family: 'Montserrat', sans-serif;
 }
 
-.form-reservation-input input[type="text"], 
+.form-reservation-input input[type="text"],
 .form-reservation-input input[type="date"],
 .form-reservation-input input[type="time"]
 {
@@ -1155,14 +1163,14 @@ table {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-.body-reservation{          
+.body-reservation{
     background:url(https://majoliechambre.fr/wp-content/uploads/2019/07/papier-peint-fleurs-dor%C3%83%C2%A9es-compressor.png) center fixed;
     background-size:contain;
 }
 
 .reservation-event{
     margin-top:10%;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     background-color:#333;
     color:white;
     padding:2%;
@@ -1183,4 +1191,3 @@ table {
 /****RESERVATION RESPONSIVE****/
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
