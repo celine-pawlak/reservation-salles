@@ -56,15 +56,31 @@ include 'functions/slot_generator.php';
         <ul>
             <?php if (!isset($_SESSION['user'])) : ?>
                 <li><a href="index.php"><h1>Accueil</h1></a></li>
-                <li><a href="connexion.php"><h1>Connexion</h1></a></li>
-                <li><a href="inscription.php"><h1>Inscription</h1></a></li>
+                <li class="resp_head"><a href="connexion.php"><h1>Connexion</h1></a></li>
+                <li class="resp_head"><a href="inscription.php"><h1>Inscription</h1></a></li>
+                <li class="liste2">
+                    <i class="fad fa-bars"></i>
+                    <ul class="sous-liste2">
+                        <li><a href="connexion.php"><h1>Connexion</h1></a></li>
+                        <li><a href="inscription.php"><h1>Inscription</h1></a></li>
+                    </ul>
+                </li>
             <?php else : ?>
                 <li><a href="index.php"><h1>Accueil</h1></a></li>
-                <li><a href="planning.php"><h1>Planning</h1></a></li>
-                <li class="liste">
+                <li class="resp_head"><a href="planning.php"><h1>Planning</h1></a></li>
+                <li class="liste resp_head">
                     <h1 class="header_autre">Mon compte</h1>
                     <ul class="sous-liste">
-                        <li><a href="profil.php"><p>Modifier mes identifiants</p></a></li>
+                        <li><a href="profil.php">Modifier mes identifiants</a></li>
+                        <li><a href="user_reservation.php">Modifier mes réservations</a></li>
+                        <li><a href="delete_session.php">Déconnexion</a></li>
+                    </ul>
+                </li>
+                <li class="liste2">
+                    <i class="fad fa-bars"></i>
+                    <ul class="sous-liste2">
+                        <li><a href="planning.php"><h1>Planning</h1></a></li>
+                        <li><a href="profil.php">Modifier mes identifiants</a></li>
                         <li><a href="user_reservation.php">Modifier mes réservations</a></li>
                         <li><a href="delete_session.php">Déconnexion</a></li>
                     </ul>

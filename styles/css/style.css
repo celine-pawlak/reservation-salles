@@ -121,6 +121,56 @@ header a:hover,
 .header_autre:hover {
     transform: scale(1.05);
 }
+.fa-bars{
+    z-index:3;
+    right: -70%;
+    top: 30%;
+}
+.liste2{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+}
+.sous-liste2{
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    background-color: #c08d32;
+    height:auto;
+    width: 100vw;
+    z-index:2;
+    padding-top: 50px;
+    top:0;
+    right:0;
+}
+.liste2:hover .sous-liste2{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*HEADER RESPONSIVE*/
+
+/*@media (min-width: 501px){
+
+}*/
+@media (max-width: 500px){
+    .liste2{
+        opacity: 1;
+        visibility: visible;
+        position:relative;
+    }
+    .resp_head{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index:3;
+    }
+    .sous-liste2 *{
+        font-size: 18px;
+    }
+}
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*** FOOTER ***/

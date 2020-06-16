@@ -67,14 +67,15 @@ $page_selected = "connexion";
         <?= renderErrors($errors) ?>
         <form class="form-inscription" action="connexion.php" method="POST">
             <h1> CONNEXION </h1>
-
             <label for="login">Identifiant</label>
             <input class="no-border" id="login" name="login" type="text" placeholder="Insérez votre login" required>
             <br>
             <label for="password">Mot de Passe</label>
             <input class="no-border" id="password" name="password" type="password" placeholder="Insérez votre mot de passe" required>
             <br>
-            <input class="inscription-button" type="submit" name="signin" value="Se connecter">
+            <div class="inscription-button" >
+                <input class="inscription-button" type="submit" name="signin" value="Se connecter">
+            </div>
             <p>Vous n'êtes pas inscris ?<br><a href="inscription.php">Inscrivez-vous</a></p>
         </form>
     </div>
