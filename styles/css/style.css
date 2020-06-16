@@ -45,7 +45,7 @@ a {
 .body-inscription span,
 .body-profil span{
     font-style: italic;
-    color: darkorange;
+    color: #af6408;
     font-size: 15px;
 }
 
@@ -77,6 +77,8 @@ header {
     background-color: #c08d32;
     color: white;
     font-family: 'Lora';
+    border-bottom:0.5px solid white;
+    z-index:4;
 }
 
 header h1:hover,
@@ -88,6 +90,7 @@ header a:hover {
 .navbar {
     max-width: 1400px;
     margin: 0 auto;
+    border-bottom:0.5px solid white;
 }
 
 .navbar > ul {
@@ -115,6 +118,7 @@ header a:hover {
     width: 100%;
     height: auto;
     background-color: #c08d32;
+    border-bottom:0.5px solid white;
 }
 
 .liste:hover .sous-liste {
@@ -514,14 +518,15 @@ header a:hover,
 .form-inscription input[type="password"]:hover {
     border: 1px solid darkorange;
 }
-
-.form-inscription input[type="submit"] {
+.form-inscription input[type="submit"]{
+    width: 60%;
+}
+.form-inscription input[type="submit"]{
     display: flex;
     justify-content: center;
     color: white;
     background-color: darkorange;
     font-family: 'Montserrat', sans-serif;
-    width: 60%;
     height: 40px;
     padding: 1%;
     border-radius: 50px;
@@ -534,14 +539,14 @@ header a:hover,
 
 }
 
-.inscription-button {
+.inscription-button{
     display: flex;
     justify-content: center;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.form-inscription input[type="submit"]:hover {
+.form-inscription input[type="submit"]:hover{
     transition: 1s;
     background-color: #FFC146;
     -webkit-transform: scale(1.1);
@@ -550,7 +555,7 @@ header a:hover,
 
 }
 
-.form-inscription input[type="submit"]:active {
+.form-inscription input[type="submit"]:active{
     box-shadow: 0 4px #CE8025;
     transform: translateY(4px);
 }
@@ -916,11 +921,72 @@ header a:hover,
 
 
 /****PLANNING****/
-/*
-.content {
-    max-width: 1600px;
+.reserve_box{
+    max-width: 1000px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-*/
+.form_multiples_creneaux{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+    background-color:#333333;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #F5DA95;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 .reservation-form{
     background-color:#333;
     color:white;

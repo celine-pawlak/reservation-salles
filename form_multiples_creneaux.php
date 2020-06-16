@@ -6,20 +6,24 @@ $h2 = $h_to_int_debut + 1;
 ?>
 <div class="reserve_box">
     <p>Certains créneaux sont déjà réservés, veuillez en sélectionner parmi les suivants:</p>
-    <form class="" action="planning.php" method="post">
+    <form class="form_multiples_creneaux" action="planning.php" method="post">
         <?php
 
         foreach ($is_creneaux_av as $key => $value) {
             if ($value == null) {
                 ?>
-                <input type="checkbox" id="choice<?= $key; ?>" name="choice<?= $key; ?>" value="<?= $h1; ?>" checked>
-                <label for="choice<?= $key; ?>"><?= "De " . $h1, "h à " . $h2, "h"; ?></label>
+                <div>
+                    <label class="container" for="choice<?= $key; ?>"><?= "De " . $h1, "h à " . $h2, "h"; ?>
+                        <input type="checkbox" id="choice<?= $key; ?>" name="choice<?= $key; ?>" value="<?= $h1; ?>">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
                 <?php
             }
             $h1++;
             $h2++;
         }
-            ?>
-            <button type="submit" name="fill_creneaux">Confirmer</button>
+        ?>
+        <button class="form-reservation_button" type="submit" name="fill_creneaux" value="Confirmer">Confimer</button>
     </form>
 </div>
