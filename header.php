@@ -64,7 +64,7 @@ include 'functions/slot_generator.php';
                 <li class="liste">
                     <h1 class="header_autre">Mon compte</h1>
                     <ul class="sous-liste">
-                        <li><a href="profil.php"><p>Modifier mes identifiants</p></a></li>
+                        <li><a href="profil.php">Modifier mes identifiants</a></li>
                         <li><a href="user_reservation.php">Modifier mes réservations</a></li>
                         <li><a href="delete_session.php">Déconnexion</a></li>
                     </ul>
