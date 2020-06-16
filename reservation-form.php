@@ -12,7 +12,7 @@
         <input type="text" name="description" id="description" value="" required placeholder="Description" maxlength="30"><br>
     </div>
     <div class="form_element">
-        <div class="ligne-form-resa">
+        <div class="hour-form-resa">
             <label for="date_debut">Le</label>
             <input type="date" name="date" id="date_debut" value="" required>
             <label for="heure_debut">de </label>

@@ -941,6 +941,210 @@ header a:hover,
 
 
 /****PLANNING****/
+
+.planning-form {
+    background: url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
+    background-size: contain;
+}
+
+.week-container-group {
+    margin-bottom: 5%;
+}
+
+.week-calendar {
+    background-color: white;
+    table-layout: fixed;
+    width: 90%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.week-calendar th, td {
+    border: 1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    height: 5vh;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.week-calendar th {
+    background-color: #333;
+    color: white;
+    font-weight: 600;
+}
+
+.week-calendar .heure-titre {
+    color: white;
+    background-color: #C08D32;
+}
+
+.week-calendar .heure {
+    background-color: #C08D32;
+    color: white;
+    font-weight: 600;
+}
+
+.week-calendar .reservation {
+    background-color: lightgray;
+    transition: 0.3s;
+}
+
+.week-calendar .reservation:hover {
+    background-color: grey;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    transform: scale(1.1);
+}
+
+.week-calendar .reservation a:hover {
+    color: #FFC146;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+/****RESPONSIVE PLANNING****/
+
+@media screen and (max-width: 375px) {
+
+    .week-calendar td, th {
+        font-size: 35%;
+    }
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+
+    .week-calendar td, th {
+        font-size: 50%;
+    }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+/****RESERVATION-FORM****/
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.form_element {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-top: 5%;
+    background-color: #333;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.reservation-form h2, p {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.form_element input {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    height: 25px;
+    padding: 1%;
+    font-weight: bold;
+    outline: none;
+}
+
+.form_element label, input {
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.form-reservation-input:focus {
+    border: 5px solid #C08D32;
+}
+
+.form_element input[type="date"] {
+    width: 40%;
+}
+
+.hour-form-resa {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-reservation_button {
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid lightgray;
+    font-family: 'Montserrat', sans-serif;
+    padding: 2%;
+    font-size: 15px;
+    background-color: #333;
+    color: white;
+    font-weight: 100;
+    outline: none;
+    align-self: center;
+}
+
+.form-reservation_button:hover {
+    color: #333;
+    background-color: lightgray;
+    border: 1px solid gray;
+    transition: 1s;
+}
+
+.form-reservation_button:active {
+    color: white;
+    background-color: grey;
+    border: 1px solid #333;
+    transition: 2s;
+}
+
+
+/****RESPONSIVE RESERVATION-FORM****/
+
+@media screen and (max-width: 375px) {
+
+    .reservation-form {
+        width: 90%;
+        margin-top: 2%;
+    }
+
+    .form_element {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+
+    .reservation-form {
+        width: 90%;
+        margin-top: 2%;
+    }
+
+    .form_element {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+/*RESERVATION FORM MULTI CRENAUX*/
 .reserve_box {
     max-width: 1000px;
     margin: 1rem auto;
@@ -1015,211 +1219,6 @@ header a:hover,
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
-.planning-form {
-    background: url(https://www.solcolor.fr/3137-thickbox_default/papier-peint-a-motif-retro-orange-et-gris-grandeco.jpg) center fixed;
-    background-size: contain;
-}
-
-.reservation-form {
-    background-color: #333;
-    color: white;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.week-container-group {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
-
-}
-
-.week-container-group table {
-    background-color: white;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-
-.week-calendar th,
-td,
-table {
-    border: 0.1px solid lightgray;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
-
-}
-
-
-.week-calendar th,
-td {
-    border-radius: 5px;
-}
-
-.week-calendar th {
-    background-color: #333;
-    color: white;
-}
-
-.week-calendar td {
-    font-size: 15px;
-    text-align: center;
-    font-weight: 200;
-}
-
-.week-calendar .heure-titre {
-    color: white;
-    background-color: #C08D32;
-}
-
-.week-calendar .heure {
-    background-color: #C08D32;
-    color: white;
-    text-align: center;
-}
-
-.week-calendar .reservation {
-    background-color: lightgray;
-}
-
-.week-calendar .reservation a:hover {
-    background-color: grey;
-    text-decoration: underline;
-    border-radius: 5px;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-/****RESPONSIVE PLANNING****/
-
-@media screen and (max-width: 375px) {
-
-    .week-calendar td, th {
-        font-size: 35%;
-    }
-
-}
-
-@media screen and (min-width: 376px) and (max-width: 768px) {
-
-    .week-calendar td, th {
-        font-size: 50%;
-    }
-}
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-/****RESERVATION-FORM****/
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-.form_element {
-    display: flex;
-    flex-direction: column;
-}
-
-.reservation-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin-top: 5%;
-    background-color: #333;
-    color: white;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.form-reservation-input label {
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-.form-reservation-input input[type="text"],
-.form-reservation-input input[type="date"],
-.form-reservation-input input[type="time"] {
-    border-radius: 5px;
-    border: 0.1px solid lightgray;
-    height: 25px;
-    outline-color: #C08D32;
-    font-family: 'Montserrat', sans-serif;
-    padding: 1%;
-    font-weight: bold;
-}
-
-.form-reservation-input input[type="date"] {
-    width: 40%;
-}
-
-.ligne-form-resa {
-    display: flex;
-    justify-content: space-around;
-}
-
-
-.form-reservation_button {
-    border-radius: 10px;
-    height: 40px;
-    border: 0.1px solid lightgray;
-    font-family: 'Montserrat', sans-serif;
-    padding: 2%;
-    font-size: 15px;
-    background-color: #333;
-    color: white;
-    font-weight: 100;
-    outline: none;
-    align-self: center;
-}
-
-.form-reservation_button:hover {
-    color: #333;
-    background-color: lightgray;
-    border: 1px solid gray;
-    transition: 1s;
-}
-
-.form-reservation_button:active {
-    color: white;
-    background-color: grey;
-    border: 1px solid #333;
-    transition: 2s;
-}
-
-
-/****RESPONSIVE RESERVATION-FORM****/
-
-@media screen and (max-width: 375px) {
-
-    .reservation-form {
-        width: 95%;
-        margin-top: 2%;
-    }
-
-    .form_element {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media screen and (min-width: 376px) and (max-width: 768px) {
-
-    .reservation-form {
-        width: 95%;
-        margin-top: 2%;
-    }
-
-    .form_element {
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
