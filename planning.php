@@ -206,8 +206,7 @@ $page_selected = "planning";
                 $weekDays = getWeekDays();
                 foreach ($weekDays as $weekDay) : ?>
                     <th><?= $weekDay; ?></th>
-                    <?php
-                endforeach; ?>
+                <?php endforeach; ?>
             </tr>
             </thead>
             <tbody>
@@ -240,22 +239,15 @@ $page_selected = "planning";
                                     <?= $events['titre']; ?>
                                     </a>
                                 </td>
-                                <?php
-                            endif; ?>
-                            <?php
-                        endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                         <?php
                         if ($v == 0) : ?>
                             <td>Disponible</td>
-                            <?php
-                        endif; ?>
-                        <?php
-                    endforeach; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </tr>
-                <?php
-            endforeach; ?>
-            <tr>
-            </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
